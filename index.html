@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serendipity by Alina Ramona | Astrologie & Consiliere în Dezvoltare Personală</title>
+<meta name="description" content="Astrologie profesională cu 20 de ani experiență: hartă natală, sinastrie, astro-relocare, revenire solară. Consilier licențiat în dezvoltare personală. Consultații în română și engleză.">
+<meta name="keywords" content="astrologie, harta natala, sinastrie, astro relocare, revenire solara, consiliere dezvoltare personala, consultatie astrologie, astrolog Romania, Alina Ramona">
+<meta property="og:title" content="Serendipity by Alina Ramona | Astrologie & Consiliere">
+<meta property="og:description" content="20 de ani de astrologie profesională. Consilier licențiat în dezvoltare personală.">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="ro" href="#" />
+<link rel="alternate" hreflang="en" href="#" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold: #C8A96E;
+    --gold-light: #E8D5A8;
+    --gold-dark: #8A6E3A;
+    --night: #0D0D1A;
+    --night-mid: #14142A;
+    --night-surface: #1C1C35;
+    --night-border: rgba(200, 169, 110, 0.18);
+    --text-main: #F0EAD6;
+    --text-muted: #9A8F7A;
+    --text-dim: #5A5260;
+    --accent: #7B6FBF;
+    --accent-soft: rgba(123, 111, 191, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--night);
+    color: var(--text-main);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── STARS BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(200,169,110,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 8%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 55% 22%, rgba(200,169,110,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 5%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 18%, rgba(200,169,110,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 20% 40%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 45% 35%, rgba(200,169,110,0.25) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 65% 48%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 82% 38%, rgba(200,169,110,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 62%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 70%, rgba(200,169,110,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 65%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 85%, rgba(200,169,110,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 90%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 70% 80%, rgba(200,169,110,0.35) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── LANGUAGE TOGGLE ── */
+  #lang-toggle {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.5rem;
+    z-index: 100;
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--night-border);
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(13,13,26,0.85);
+    backdrop-filter: blur(8px);
+  }
+  .lang-btn {
+    padding: 0.3rem 0.9rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .lang-btn.active {
+    background: var(--gold);
+    color: var(--night);
+    font-weight: 500;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 90;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(13,13,26,0.95) 0%, transparent 100%);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-orb {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(123,111,191,0.12) 0%, rgba(200,169,110,0.05) 50%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .hero-symbol {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 2rem;
+  }
+
+  .hero-desc {
+    max-width: 520px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin: 0 auto 3rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2.4rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+  .hero-cta:hover::before { transform: translateX(0); }
+  .hero-cta:hover { color: var(--night); }
+  .hero-cta span { position: relative; z-index: 1; }
+
+  .hero-badges {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+  }
+  .badge {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .badge::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 8px;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem auto;
+    max-width: 200px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--night-border);
+  }
+  .divider-star { color: var(--gold); font-size: 10px; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--night-mid); }
+
+  .services-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    color: var(--text-muted);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5px;
+    background: var(--night-border);
+    border: 1px solid var(--night-border);
+  }
+
+  .service-card {
+    background: var(--night-mid);
+    padding: 2.5rem 2rem;
+    transition: background 0.4s;
+    cursor: default;
+  }
+  .service-card:hover { background: var(--night-surface); }
+
+  .service-glyph {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+    opacity: 0.8;
+  }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--gold-light);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .service-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(200,169,110,0.3);
+    padding: 0.25rem 0.7rem;
+  }
+
+  /* ── ABOUT ── */
+  #about .section-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chart-wheel {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 1px solid var(--night-border);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chart-wheel::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.1);
+  }
+  .chart-wheel::after {
+    content: '';
+    position: absolute;
+    inset: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.08);
+  }
+  .wheel-center {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    text-align: center;
+    z-index: 1;
+  }
+  .wheel-glyphs {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    animation: spin 80s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .glyph-dot {
+    position: absolute;
+    font-size: 0.85rem;
+    color: var(--gold);
+    opacity: 0.5;
+  }
+
+  .about-text p {
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .about-text strong {
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+
+  .credentials {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-left: 2px solid var(--gold);
+    background: var(--night-surface);
+  }
+  .credentials p {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* ── BOOKING ── */
+  #booking {
+    background: var(--night-surface);
+    text-align: center;
+  }
+
+  .booking-intro {
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto 3rem;
+  }
+
+  .booking-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--night-border);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    border: 1px solid var(--night-border);
+  }
+
+  .booking-type {
+    background: var(--night-surface);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  .booking-type:hover { background: var(--night-mid); }
+
+  .booking-type h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--gold-light);
+    margin: 0.5rem 0;
+  }
+  .booking-type .dur {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  /* Calendly embed */
+  .calendly-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    min-height: 650px;
+    border: 1px solid var(--night-border);
+    background: var(--night-mid);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .calendly-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: 1.5rem;
+    padding: 3rem 2rem;
+  }
+
+  .calendly-placeholder p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: var(--gold);
+    color: var(--night);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: opacity 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--night); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .testimonial {
+    border: 1px solid var(--night-border);
+    padding: 2rem;
+    position: relative;
+  }
+  .testimonial::before {
+    content: '"';
+    position: absolute;
+    top: -0.5rem;
+    left: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.2;
+    line-height: 1;
+  }
+
+  .testimonial p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+  }
+
+  .testimonial-author {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--night-mid); text-align: center; }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+
+  .contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    font-size: 0.85rem;
+  }
+  .contact-link:hover { color: var(--gold); }
+  .contact-link .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+  .contact-link span {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: inherit;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--night-border);
+    padding: 2rem;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    #about .section-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .about-visual { display: none; }
+    nav .nav-links { display: none; }
+    #lang-toggle { top: 1rem; right: 1rem; }
+  }
+
+  /* ── FADE-IN ANIMATION ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── LANGUAGE CONTENT ── */
+  [data-en], [data-ro] { }
+  .lang-en [data-ro] { display: none; }
+  .lang-ro [data-en] { display: none; }
+</style>
+</head>
+
+<body class="lang-ro">
+
+<!-- Language Toggle -->
+<div id="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('ro')">RO</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+
+<!-- Navigation -->
+<nav>
+  <a href="#hero" class="nav-logo">✦ Serendipity</a>
+  <ul class="nav-links">
+    <li><a href="#services" data-ro>Servicii</a><a href="#services" data-en>Services</a></li>
+    <li><a href="#about" data-ro>Despre Mine</a><a href="#about" data-en>About</a></li>
+    <li><a href="#booking" data-ro>Programare</a><a href="#booking" data-en>Book</a></li>
+    <li><a href="#contact" data-ro>Contact</a><a href="#contact" data-en>Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-orb"></div>
+
+  <div class="hero-symbol">☽ ✦ ☾</div>
+
+  <p class="hero-eyebrow" data-ro>Astrologie · Dezvoltare Personală</p>
+  <p class="hero-eyebrow" data-en>Astrology · Personal Development</p>
+
+  <h1>Serendipity<br><em style="font-style:italic; color: var(--gold);">by Alina Ramona</em></h1>
+
+  <p class="hero-subtitle" data-ro>Cerul ca oglindă a sufletului tău</p>
+  <p class="hero-subtitle" data-en>The sky as mirror of your soul</p>
+
+  <p class="hero-desc" data-ro>
+    Douăzeci de ani de practică astrологică profundă, combinată cu consiliere licențiată în dezvoltare personală. O călătorie spre sine, ghidată de stele.
+  </p>
+  <p class="hero-desc" data-en>
+    Twenty years of deep astrological practice, combined with licensed personal development counseling. A journey toward the self, guided by the stars.
+  </p>
+
+  <a href="#booking" class="hero-cta">
+    <span data-ro>Rezervă o Consultație</span>
+    <span data-en>Book a Consultation</span>
+  </a>
+
+  <div class="hero-badges">
+    <span class="badge" data-ro>20 ani experiență</span>
+    <span class="badge" data-en>20 years experience</span>
+
+    <span class="badge" data-ro>Consilier licențiat</span>
+    <span class="badge" data-en>Licensed counselor</span>
+
+    <span class="badge" data-ro>Consultații în română & engleză</span>
+    <span class="badge" data-en>Sessions in Romanian & English</span>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-intro fade-in">
+      <span class="section-label" data-ro>Servicii</span>
+      <span class="section-label" data-en>Services</span>
+      <h2 data-ro>Ce oferim împreună</h2>
+      <h2 data-en>What we explore together</h2>
+      <p data-ro>Fiecare suflet are propriul cod cosmic. Prin astrologie și consiliere, descifrăm împreună harta vieții tale.</p>
+      <p data-en>Every soul carries a unique cosmic code. Through astrology and counseling, we decode your life's map together.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card fade-in">
+        <span class="service-glyph">☉</span>
+        <h3 data-ro>Hartă Natală</h3>
+        <h3 data-en>Natal Chart</h3>
+        <p data-ro>Fotografia cerului din momentul nașterii tale — o hartă completă a personalității, talentelor, provocărilor și potențialului tău de viață.</p>
+        <p data-en>The sky's snapshot at your birth — a complete map of your personality, talents, challenges, and life potential.</p>
+        <span class="service-tag" data-ro>Fundament</span>
+        <span class="service-tag" data-en>Foundation</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-glyph">♡</span>
+        <h3 data-ro>Sinastrie</h3>
+        <h3 data-en>Synastry</h3>
+        <p data-ro>Compatibilitatea și dinamica dintre două hărți astrale — relații romantice, prietenii, relații de afaceri. Înțelegi ce funcționează și unde e nevoie de înțelegere.</p>
+        <p data-en>Compatibility and dynamics between two birth charts — romantic partnerships, friendships, business relationships. Understand what works and where awareness is needed.</p>
+        <span class="service-tag" data-ro>Relații</span>
+        <span class="service-tag" data-en>Relationships</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-glyph">♃</span>
+        <h3 data-ro>Revenire Solară</h3>
+        <h3 data-en>Solar Return</h3>
+        <p data-ro>Harta anului tău personal — o previziune astrологică pentru cele 12 luni care urmează după ziua ta de naștere. Teme, oportunități, provocări.</p>
+        <p data-en>Your personal year chart — an astrological forecast for the 12 months following your birthday. Themes, opportunities, challenges ahead.</p>
+        <span class="service-tag" data-ro>Previziune</span>
+        <span class="service-tag" data-en>Forecast</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-glyph">✈</span>
+        <h3 data-ro>Astro-Relocare</h3>
+        <h3 data-en>Astro Relocation</h3>
+        <p data-ro>Unde pe glob ți se activează cel mai bine energiile? Dacă visezi să te muți, să călătorești sau să lucrezi în altă parte, astrologia relocării îți arată locurile favorabile.</p>
+        <p data-en>Where on earth do your energies flourish best? If you dream of moving, traveling, or working abroad, relocation astrology reveals your power places.</p>
+        <span class="service-tag" data-ro>Locuri de Putere</span>
+        <span class="service-tag" data-en>Power Places</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-glyph">◎</span>
+        <h3 data-ro>Consiliere în Dezvoltare Personală</h3>
+        <h3 data-en>Personal Development Counseling</h3>
+        <p data-ro>Sesiuni individuale cu un consilier licențiat în dezvoltare personală. Explorăm blocaje, resurse interioare și direcție de viață — cu sau fără perspectivă astrologică.</p>
+        <p data-en>Individual sessions with a licensed personal development counselor. We explore blockages, inner resources, and life direction — with or without astrological perspective.</p>
+        <span class="service-tag" data-ro>Licențiat · Licensed</span>
+        <span class="service-tag" data-en>Licensed Counselor</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <span class="service-glyph">⟳</span>
+        <h3 data-ro>Tranzite & Progresii</h3>
+        <h3 data-en>Transits & Progressions</h3>
+        <p data-ro>Unde ești acum în ciclul tău cosmic? O lectură a energiilor active în prezent te ajută să navighezi cu grație momentele dificile și să valorifici oportunitățile.</p>
+        <p data-en>Where are you now in your cosmic cycle? A reading of currently active energies helps you navigate difficult moments with grace and seize opportunities.</p>
+        <span class="service-tag" data-ro>Prezent & Viitor</span>
+        <span class="service-tag" data-en>Present & Future</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-visual">
+      <div class="chart-wheel">
+        <div class="wheel-glyphs">
+          <span class="glyph-dot" style="top:5%; left:50%; transform:translateX(-50%)">♈</span>
+          <span class="glyph-dot" style="top:18%; right:10%">♉</span>
+          <span class="glyph-dot" style="top:46%; right:3%; transform:translateY(-50%)">♊</span>
+          <span class="glyph-dot" style="bottom:18%; right:10%">♋</span>
+          <span class="glyph-dot" style="bottom:5%; left:50%; transform:translateX(-50%)">♌</span>
+          <span class="glyph-dot" style="bottom:18%; left:10%">♍</span>
+          <span class="glyph-dot" style="top:46%; left:3%; transform:translateY(-50%)">♎</span>
+          <span class="glyph-dot" style="top:18%; left:10%">♏</span>
+        </div>
+        <div class="wheel-center">
+          <div style="font-size:2rem; margin-bottom:0.3rem">✦</div>
+          <div style="font-size:0.75rem; letter-spacing:0.1em; color: var(--text-muted)">NATAL</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-text fade-in">
+      <span class="section-label" data-ro>Despre Mine</span>
+      <span class="section-label" data-en>About Me</span>
+      <h2 data-ro>Alina Ramona</h2>
+      <h2 data-en>Alina Ramona</h2>
+      <p data-ro>
+        Pasiunea mea pentru astrologie a început cu <strong>peste 20 de ani în urmă</strong>, dintr-o curiozitate autentică față de ceea ce cerul spune despre fiecare dintre noi. Ceea ce a început ca un hobby aprofundat a devenit o practică serioasă, bazată pe studiu continuu și mii de hărți analizate.
+      </p>
+      <p data-en>
+        My love for astrology began <strong>over 20 years ago</strong>, from a genuine curiosity about what the sky says about each of us. What started as a deep hobby has become a serious practice built on continuous study and thousands of charts analyzed.
+      </p>
+      <p data-ro>
+        Lucrez cu <strong>astrologie psihologică și evolutivă</strong> — nu prezic viitorul, ci îl explorăm împreună ca pe un spațiu de posibilități. Fiecare consultație este unică, profundă și orientată spre creștere.
+      </p>
+      <p data-en>
+        I work with <strong>psychological and evolutionary astrology</strong> — I don't predict the future, we explore it together as a space of possibilities. Every consultation is unique, deep, and growth-oriented.
+      </p>
+
+      <div class="credentials">
+        <p data-ro><strong>☑ Consilier licențiat în Dezvoltare Personală</strong></p>
+        <p data-en><strong>☑ Licensed Counselor in Personal Development</strong></p>
+        <p data-ro style="margin-top:0.8rem !important; font-size:0.82rem !important; color: var(--text-dim);">Aceasta înseamnă că sesiunile de consiliere au baze profesionale și etice solidă, complementare practicii astrologice.</p>
+        <p data-en style="margin-top:0.8rem !important; font-size:0.82rem !important; color: var(--text-dim);">This means counseling sessions are grounded in professional and ethical frameworks, complementary to astrological practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOKING ── -->
+<section id="booking">
+  <div class="section-inner">
+    <span class="section-label" data-ro>Programare</span>
+    <span class="section-label" data-en>Book a Session</span>
+    <h2 data-ro>Rezervă o consultație</h2>
+    <h2 data-en>Reserve your consultation</h2>
+
+    <p class="booking-intro" data-ro>
+      Alege tipul de sesiune care ți se potrivește și programează-te direct. Consultațiile se desfășoară online, în română sau engleză.
+    </p>
+    <p class="booking-intro" data-en>
+      Choose the session type that fits you and book directly. Consultations take place online, in Romanian or English.
+    </p>
+
+    <div class="booking-options">
+      <div class="booking-type">
+        <span class="service-glyph" style="font-size:1.4rem">☉</span>
+        <h4 data-ro>Hartă Natală</h4>
+        <h4 data-en>Natal Chart</h4>
+        <p class="dur" data-ro>90 min</p>
+        <p class="dur" data-en>90 min</p>
+      </div>
+      <div class="booking-type">
+        <span class="service-glyph" style="font-size:1.4rem">♡</span>
+        <h4 data-ro>Sinastrie</h4>
+        <h4 data-en>Synastry</h4>
+        <p class="dur" data-ro>75 min</p>
+        <p class="dur" data-en>75 min</p>
+      </div>
+      <div class="booking-type">
+        <span class="service-glyph" style="font-size:1.4rem">◎</span>
+        <h4 data-ro>Consiliere</h4>
+        <h4 data-en>Counseling</h4>
+        <p class="dur" data-ro>60 min</p>
+        <p class="dur" data-en>60 min</p>
+      </div>
+    </div>
+
+    <!-- Calendly inline embed -->
+    <div class="calendly-wrapper">
+      <div id="calendly-embed-container">
+        <!-- CALENDLY PLACEHOLDER — replace the instructions below with your actual Calendly username -->
+        <div class="calendly-placeholder">
+          <div style="font-size:2.5rem; opacity:0.4">📅</div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1.5rem; color:var(--gold-light)" data-ro>Programare Online</h3>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1.5rem; color:var(--gold-light)" data-en>Online Booking</h3>
+          <p data-ro>Pentru a activa programarea directă, creați un cont gratuit pe <strong style="color:var(--gold)">Calendly.com</strong> și înlocuiți "YOUR-CALENDLY-USERNAME" în codul acestei pagini cu username-ul dvs. Calendly.</p>
+          <p data-en>To activate direct booking, create a free account at <strong style="color:var(--gold)">Calendly.com</strong> and replace "YOUR-CALENDLY-USERNAME" in this page's code with your Calendly username.</p>
+          <a href="https://calendly.com" target="_blank" class="btn-primary" data-ro>Creează cont Calendly gratuit →</a>
+          <a href="https://calendly.com" target="_blank" class="btn-primary" data-en>Create free Calendly account →</a>
+          <p style="font-size:0.8rem; margin-top:1rem" data-ro>Alternativ, contactați-mă direct prin email sau WhatsApp pentru a stabili o programare.</p>
+          <p style="font-size:0.8rem; margin-top:1rem" data-en>Alternatively, contact me directly by email or WhatsApp to schedule a session.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ↑↑↑ SETUP INSTRUCTIONS ↑↑↑
+    Once you have your Calendly account, replace the entire calendly-embed-container div above with:
+
+    <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-USERNAME" style="min-width:320px;height:630px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    Replace YOUR-USERNAME with your actual Calendly username.
+    -->
+
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="fade-in" style="text-align:center; margin-bottom:1rem">
+      <span class="section-label" data-ro>Testimoniale</span>
+      <span class="section-label" data-en>Testimonials</span>
+      <h2 data-ro>Ce spun clienții</h2>
+      <h2 data-en>What clients say</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial fade-in">
+        <p data-ro>„Consultația cu Alina a fost una dintre cele mai profunde experiențe de autocunoaștere pe care le-am avut. Nu mi-a «citit» viitorul — mi-a ajutat să înțeleg cine sunt cu adevărat."</p>
+        <p data-en>"My session with Alina was one of the most profound self-discovery experiences I've had. She didn't 'read my future' — she helped me understand who I truly am."</p>
+        <span class="testimonial-author">— M.C., București</span>
+      </div>
+      <div class="testimonial fade-in">
+        <p data-ro>„Analiza de sinastrie ne-a ajutat pe mine și pe partenerul meu să înțelegem dinamicile relației noastre. Alina are o capacitate rară de a traduce simbolurile în ceva concret și util."</p>
+        <p data-en>"The synastry reading helped my partner and I understand our relationship's dynamics. Alina has a rare ability to translate symbols into something concrete and useful."</p>
+        <span class="testimonial-author">— A.T., Cluj-Napoca</span>
+      </div>
+      <div class="testimonial fade-in">
+        <p data-ro>„Am apelat la sesiunile de consiliere combinată cu astrologie în unui moment de răscruce. Perspectiva oferită a fost cu totul diferită de orice altceva am încercat."</p>
+        <p data-en>"I turned to the combined counseling and astrology sessions at a crossroads in my life. The perspective offered was entirely different from anything else I had tried."</p>
+        <span class="testimonial-author">— L.P., Timișoara</span>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:3rem; font-size:0.8rem; color:var(--text-dim)" data-ro>* Testimonialele au fost anonimizate și publicate cu acordul clienților.</p>
+    <p style="text-align:center; margin-top:3rem; font-size:0.8rem; color:var(--text-dim)" data-en>* Testimonials have been anonymized and published with client consent.</p>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-inner">
+    <span class="section-label" data-ro>Contact</span>
+    <span class="section-label" data-en>Get in Touch</span>
+    <h2 data-ro>Hai să vorbim</h2>
+    <h2 data-en>Let's connect</h2>
+    <p style="color:var(--text-muted); max-width:400px; margin:0 auto" data-ro>Ai întrebări înainte de a rezerva? Scrie-mi — îți răspund în cel mai scurt timp.</p>
+    <p style="color:var(--text-muted); max-width:400px; margin:0 auto" data-en>Questions before booking? Write to me — I'll reply as soon as possible.</p>
+
+    <div class="contact-links">
+      <a href="mailto:contact@serendipity-alina.ro" class="contact-link">
+        <span class="icon">✉</span>
+        <span>Email</span>
+        <span style="color:var(--text-dim); font-size:0.8rem">contact@serendipity-alina.ro</span>
+      </a>
+
+      <!-- Uncomment and fill in when you have WhatsApp/social:
+      <a href="https://wa.me/40XXXXXXXXX" class="contact-link" target="_blank">
+        <span class="icon">◉</span>
+        <span>WhatsApp</span>
+      </a>
+      <a href="https://instagram.com/YOUR_HANDLE" class="contact-link" target="_blank">
+        <span class="icon">◈</span>
+        <span>Instagram</span>
+      </a>
+      <a href="https://facebook.com/YOUR_PAGE" class="contact-link" target="_blank">
+        <span class="icon">◑</span>
+        <span>Facebook</span>
+      </a>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>✦ Serendipity by Alina Ramona · Astrologie & Consiliere în Dezvoltare Personală</p>
+  <p style="margin-top:0.5rem">© 2025 · Toate drepturile rezervate / All rights reserved</p>
+</footer>
+
+<script>
+  // Language switcher
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector('.lang-btn[onclick*="' + lang + '"]').classList.add('active');
+    document.documentElement.setAttribute('lang', lang);
+  }
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Calendly prefill (if you integrate Calendly later, this passes user locale)
+  // You can add: ?locale=ro to the Calendly URL for Romanian users
+</script>
+
+</body>
+</html>
