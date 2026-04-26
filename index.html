@@ -4,1005 +4,1007 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Serendipity by Alina Ramona | Astrologie & Consiliere în Dezvoltare Personală</title>
-<meta name="description" content="Astrologie profesională cu 20 de ani experiență: hartă natală, sinastrie, astro-relocare, revenire solară. Consilier licențiat în dezvoltare personală. Consultații în română și engleză.">
-<meta name="keywords" content="astrologie, harta natala, sinastrie, astro relocare, revenire solara, consiliere dezvoltare personala, consultatie astrologie, astrolog Romania, Alina Ramona">
+<meta name="description" content="Astrologie profesională cu 20 de ani experiență: hartă natală, sinastrie, astro-relocare, revenire solară. Consilier licențiat în dezvoltare personală. Autoare a seriei Petals of Becoming.">
+<meta name="keywords" content="astrologie, harta natala, sinastrie, astro relocare, revenire solara, consiliere dezvoltare personala, consultatie astrologie, astrolog Romania, Alina Ramona, petals of becoming, petals of growth, petals of self love">
 <meta property="og:title" content="Serendipity by Alina Ramona | Astrologie & Consiliere">
-<meta property="og:description" content="20 de ani de astrologie profesională. Consilier licențiat în dezvoltare personală.">
+<meta property="og:description" content="20 de ani de astrologie profesională. Consilier licențiat. Autoare a seriei Petals of Becoming.">
 <meta property="og:type" content="website">
-<link rel="alternate" hreflang="ro" href="#" />
-<link rel="alternate" hreflang="en" href="#" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-  :root {
-    --gold: #C8A96E;
-    --gold-light: #E8D5A8;
-    --gold-dark: #8A6E3A;
-    --night: #0D0D1A;
-    --night-mid: #14142A;
-    --night-surface: #1C1C35;
-    --night-border: rgba(200, 169, 110, 0.18);
-    --text-main: #F0EAD6;
-    --text-muted: #9A8F7A;
-    --text-dim: #5A5260;
-    --accent: #7B6FBF;
-    --accent-soft: rgba(123, 111, 191, 0.15);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--night);
-    color: var(--text-main);
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.75;
-    overflow-x: hidden;
-  }
-
-  /* ── STARS BACKGROUND ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      radial-gradient(1px 1px at 10% 15%, rgba(200,169,110,0.4) 0%, transparent 100%),
-      radial-gradient(1px 1px at 30% 8%, rgba(255,255,255,0.3) 0%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 55% 22%, rgba(200,169,110,0.3) 0%, transparent 100%),
-      radial-gradient(1px 1px at 75% 5%, rgba(255,255,255,0.4) 0%, transparent 100%),
-      radial-gradient(1px 1px at 88% 18%, rgba(200,169,110,0.35) 0%, transparent 100%),
-      radial-gradient(1px 1px at 20% 40%, rgba(255,255,255,0.2) 0%, transparent 100%),
-      radial-gradient(1px 1px at 45% 35%, rgba(200,169,110,0.25) 0%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 65% 48%, rgba(255,255,255,0.3) 0%, transparent 100%),
-      radial-gradient(1px 1px at 82% 38%, rgba(200,169,110,0.3) 0%, transparent 100%),
-      radial-gradient(1px 1px at 5% 62%, rgba(255,255,255,0.25) 0%, transparent 100%),
-      radial-gradient(1px 1px at 35% 70%, rgba(200,169,110,0.2) 0%, transparent 100%),
-      radial-gradient(1px 1px at 90% 65%, rgba(255,255,255,0.3) 0%, transparent 100%),
-      radial-gradient(1px 1px at 15% 85%, rgba(200,169,110,0.3) 0%, transparent 100%),
-      radial-gradient(1px 1px at 50% 90%, rgba(255,255,255,0.2) 0%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 70% 80%, rgba(200,169,110,0.35) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* ── LANGUAGE TOGGLE ── */
-  #lang-toggle {
-    position: fixed;
-    top: 1.2rem;
-    right: 1.5rem;
-    z-index: 100;
-    display: flex;
-    gap: 0;
-    border: 1px solid var(--night-border);
-    border-radius: 20px;
-    overflow: hidden;
-    background: rgba(13,13,26,0.85);
-    backdrop-filter: blur(8px);
-  }
-  .lang-btn {
-    padding: 0.3rem 0.9rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  .lang-btn.active {
-    background: var(--gold);
-    color: var(--night);
-    font-weight: 500;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 90;
-    padding: 1.2rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(to bottom, rgba(13,13,26,0.95) 0%, transparent 100%);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    color: var(--gold);
-    text-decoration: none;
-  }
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-  .nav-links a {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-
-  /* ── HERO ── */
-  #hero {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 8rem 2rem 4rem;
-    overflow: hidden;
-  }
-
-  .hero-orb {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(123,111,191,0.12) 0%, rgba(200,169,110,0.05) 50%, transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-
-  .hero-symbol {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.7;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  .hero-eyebrow {
-    font-family: 'Jost', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.2rem;
-  }
-
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.4rem;
-  }
-
-  .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--gold-light);
-    margin-bottom: 2rem;
-  }
-
-  .hero-desc {
-    max-width: 520px;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.9;
-    margin: 0 auto 3rem;
-  }
-
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.9rem 2.4rem;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: all 0.4s;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-cta::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gold);
-    transform: translateX(-100%);
-    transition: transform 0.4s ease;
-  }
-  .hero-cta:hover::before { transform: translateX(0); }
-  .hero-cta:hover { color: var(--night); }
-  .hero-cta span { position: relative; z-index: 1; }
-
-  .hero-badges {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 4rem;
-  }
-  .badge {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--text-dim);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .badge::before {
-    content: '✦';
-    color: var(--gold);
-    font-size: 8px;
-  }
-
-  /* ── SECTION BASE ── */
-  section {
-    position: relative;
-    z-index: 1;
-  }
-
-  .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 6rem 2rem;
-  }
-
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-  }
-
-  /* ── DIVIDER ── */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 1.5rem auto;
-    max-width: 200px;
-  }
-  .divider::before, .divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--night-border);
-  }
-  .divider-star { color: var(--gold); font-size: 10px; }
-
-  /* ── SERVICES ── */
-  #services { background: var(--night-mid); }
-
-  .services-intro {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 4rem;
-    color: var(--text-muted);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5px;
-    background: var(--night-border);
-    border: 1px solid var(--night-border);
-  }
-
-  .service-card {
-    background: var(--night-mid);
-    padding: 2.5rem 2rem;
-    transition: background 0.4s;
-    cursor: default;
-  }
-  .service-card:hover { background: var(--night-surface); }
-
-  .service-glyph {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    display: block;
-    opacity: 0.8;
-  }
-
-  .service-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: var(--gold-light);
-    margin-bottom: 0.6rem;
-  }
-
-  .service-card p {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-  }
-
-  .service-tag {
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid rgba(200,169,110,0.3);
-    padding: 0.25rem 0.7rem;
-  }
-
-  /* ── ABOUT ── */
-  #about .section-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-
-  .about-visual {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .chart-wheel {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    border: 1px solid var(--night-border);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .chart-wheel::before {
-    content: '';
-    position: absolute;
-    inset: 20px;
-    border-radius: 50%;
-    border: 1px solid rgba(200,169,110,0.1);
-  }
-  .chart-wheel::after {
-    content: '';
-    position: absolute;
-    inset: 60px;
-    border-radius: 50%;
-    border: 1px solid rgba(200,169,110,0.08);
-  }
-  .wheel-center {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    color: var(--gold);
-    text-align: center;
-    z-index: 1;
-  }
-  .wheel-glyphs {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    animation: spin 80s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .glyph-dot {
-    position: absolute;
-    font-size: 0.85rem;
-    color: var(--gold);
-    opacity: 0.5;
-  }
-
-  .about-text p {
-    color: var(--text-muted);
-    margin-bottom: 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  .about-text strong {
-    color: var(--gold-light);
-    font-weight: 400;
-  }
-
-  .credentials {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    border-left: 2px solid var(--gold);
-    background: var(--night-surface);
-  }
-  .credentials p {
-    font-size: 0.85rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  /* ── BOOKING ── */
-  #booking {
-    background: var(--night-surface);
-    text-align: center;
-  }
-
-  .booking-intro {
-    color: var(--text-muted);
-    max-width: 520px;
-    margin: 0 auto 3rem;
-  }
-
-  .booking-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1px;
-    background: var(--night-border);
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    border: 1px solid var(--night-border);
-  }
-
-  .booking-type {
-    background: var(--night-surface);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    transition: background 0.3s;
-  }
-  .booking-type:hover { background: var(--night-mid); }
-
-  .booking-type h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--gold-light);
-    margin: 0.5rem 0;
-  }
-  .booking-type .dur {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-  }
-
-  /* Calendly embed */
-  .calendly-wrapper {
-    max-width: 860px;
-    margin: 0 auto;
-    min-height: 650px;
-    border: 1px solid var(--night-border);
-    background: var(--night-mid);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .calendly-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    gap: 1.5rem;
-    padding: 3rem 2rem;
-  }
-
-  .calendly-placeholder p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    max-width: 400px;
-    text-align: center;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    background: var(--gold);
-    color: var(--night);
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: opacity 0.3s;
-    border: none;
-    cursor: pointer;
-    font-family: 'Jost', sans-serif;
-  }
-  .btn-primary:hover { opacity: 0.85; }
-
-  /* ── TESTIMONIALS ── */
-  #testimonials { background: var(--night); }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .testimonial {
-    border: 1px solid var(--night-border);
-    padding: 2rem;
-    position: relative;
-  }
-  .testimonial::before {
-    content: '"';
-    position: absolute;
-    top: -0.5rem;
-    left: 1.5rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem;
-    color: var(--gold);
-    opacity: 0.2;
-    line-height: 1;
-  }
-
-  .testimonial p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-style: italic;
-    color: var(--text-muted);
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
-  }
-
-  .testimonial-author {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* ── CONTACT ── */
-  #contact { background: var(--night-mid); text-align: center; }
-
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 2.5rem;
-  }
-
-  .contact-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--text-muted);
-    transition: color 0.3s;
-    font-size: 0.85rem;
-  }
-  .contact-link:hover { color: var(--gold); }
-  .contact-link .icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.2rem;
-  }
-  .contact-link span {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: inherit;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--night-border);
-    padding: 2rem;
-    text-align: center;
-    font-size: 11px;
-    color: var(--text-dim);
-    letter-spacing: 0.08em;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    #about .section-inner {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-    .about-visual { display: none; }
-    nav .nav-links { display: none; }
-    #lang-toggle { top: 1rem; right: 1rem; }
-  }
-
-  /* ── FADE-IN ANIMATION ── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── LANGUAGE CONTENT ── */
-  [data-en], [data-ro] { }
-  .lang-en [data-ro] { display: none; }
-  .lang-ro [data-en] { display: none; }
+:root {
+  --gold: #D4A853;
+  --gold-light: #EDD898;
+  --gold-dark: #9A7535;
+  --night: #0E1628;
+  --night-mid: #132035;
+  --night-surface: #1A2A45;
+  --night-card: #1F3254;
+  --night-border: rgba(212,168,83,0.2);
+  --text-main: #EEE8D5;
+  --text-body: #C8BFAA;
+  --text-muted: #8A8C9A;
+  --text-dim: #506080;
+  --accent: #8B7FD4;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--night);
+  color:var(--text-main);
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  font-size:16px;
+  line-height:1.8;
+  overflow-x:hidden;
+}
+body::before {
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    radial-gradient(1px 1px at 8% 12%,rgba(212,168,83,0.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 25% 6%,rgba(255,255,255,0.4) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 48% 18%,rgba(212,168,83,0.4) 0%,transparent 100%),
+    radial-gradient(1px 1px at 70% 4%,rgba(255,255,255,0.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 85% 15%,rgba(212,168,83,0.45) 0%,transparent 100%),
+    radial-gradient(1px 1px at 18% 38%,rgba(255,255,255,0.3) 0%,transparent 100%),
+    radial-gradient(1px 1px at 60% 42%,rgba(212,168,83,0.3) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 78% 35%,rgba(255,255,255,0.35) 0%,transparent 100%),
+    radial-gradient(1px 1px at 40% 65%,rgba(212,168,83,0.25) 0%,transparent 100%),
+    radial-gradient(1px 1px at 92% 58%,rgba(255,255,255,0.3) 0%,transparent 100%),
+    radial-gradient(1px 1px at 12% 78%,rgba(212,168,83,0.35) 0%,transparent 100%),
+    radial-gradient(1px 1px at 55% 88%,rgba(255,255,255,0.25) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 72% 82%,rgba(212,168,83,0.4) 0%,transparent 100%);
+  pointer-events:none;
+  z-index:0;
+}
+/* PAGES */
+.page { display:none; }
+.page.active { display:block; }
+/* LANGUAGE */
+.lang-en [data-ro] { display:none; }
+.lang-ro [data-en] { display:none; }
+/* LANG TOGGLE */
+#lang-toggle {
+  position:fixed;
+  top:1.2rem;
+  right:1.5rem;
+  z-index:200;
+  display:flex;
+  border:1px solid var(--night-border);
+  border-radius:20px;
+  overflow:hidden;
+  background:rgba(14,22,40,0.92);
+  backdrop-filter:blur(10px);
+}
+.lang-btn {
+  padding:0.3rem 0.9rem;
+  font-family:'Jost',sans-serif;
+  font-size:12px;
+  letter-spacing:0.1em;
+  color:var(--text-muted);
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  transition:all 0.3s;
+}
+.lang-btn.active { background:var(--gold); color:var(--night); font-weight:500; }
+/* NAV */
+nav {
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:150;
+  padding:1.1rem 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:linear-gradient(to bottom,rgba(14,22,40,0.97) 0%,rgba(14,22,40,0) 100%);
+  backdrop-filter:blur(6px);
+}
+.nav-logo {
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;
+  font-weight:300;
+  letter-spacing:0.1em;
+  color:var(--gold);
+  text-decoration:none;
+  cursor:pointer;
+}
+.nav-links { display:flex; gap:1.6rem; list-style:none; }
+.nav-links a {
+  font-size:11.5px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--text-body);
+  text-decoration:none;
+  transition:color 0.3s;
+  cursor:pointer;
+}
+.nav-links a:hover { color:var(--gold); }
+/* SECTION */
+section { position:relative; z-index:1; }
+.section-inner { max-width:1100px; margin:0 auto; padding:6rem 2rem; }
+.section-label {
+  font-size:11px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:0.9rem;
+  display:block;
+}
+h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:300;
+  line-height:1.15;
+  margin-bottom:1.2rem;
+  color:var(--text-main);
+}
+h3 { font-family:'Cormorant Garamond',serif; font-weight:400; color:var(--gold-light); }
+p { color:var(--text-body); }
+/* HERO */
+#hero-section {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:8rem 2rem 5rem;
+  position:relative;
+  z-index:1;
+}
+.hero-orb {
+  position:absolute;
+  width:600px; height:600px;
+  border-radius:50%;
+  background:radial-gradient(circle at center,rgba(139,127,212,0.1) 0%,rgba(212,168,83,0.06) 45%,transparent 70%);
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+.hero-symbol {
+  font-size:3rem;
+  margin-bottom:1.5rem;
+  color:var(--gold);
+  opacity:0.85;
+  letter-spacing:0.4em;
+  animation:float 7s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+.hero-eyebrow {
+  font-size:11px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1.2rem;
+}
+h1 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.2rem,9vw,7rem);
+  font-weight:300;
+  line-height:1.04;
+  margin-bottom:0.5rem;
+  color:var(--text-main);
+}
+.hero-sub {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.1rem,2.5vw,1.6rem);
+  font-style:italic;
+  color:var(--gold-light);
+  margin-bottom:1.8rem;
+}
+.hero-desc {
+  max-width:540px;
+  margin:0 auto 2.8rem;
+  font-size:0.97rem;
+  line-height:1.9;
+  color:var(--text-body);
+}
+.hero-cta {
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  padding:0.9rem 2.6rem;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  font-size:12px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  transition:all 0.4s;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+}
+.hero-cta::before {
+  content:'';
+  position:absolute; inset:0;
+  background:var(--gold);
+  transform:translateX(-100%);
+  transition:transform 0.4s ease;
+}
+.hero-cta:hover::before { transform:translateX(0); }
+.hero-cta:hover { color:var(--night); }
+.hero-cta span { position:relative; z-index:1; }
+.hero-badges {
+  display:flex;
+  gap:2rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:4rem;
+}
+.badge {
+  font-size:11px;
+  letter-spacing:0.1em;
+  color:var(--text-muted);
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+}
+.badge::before { content:'✦'; color:var(--gold); font-size:8px; }
+/* SERVICES */
+.services-intro { text-align:center; max-width:580px; margin:0 auto 4rem; }
+.services-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:1px;
+  background:var(--night-border);
+  border:1px solid var(--night-border);
+}
+.service-card {
+  background:var(--night-mid);
+  padding:2.5rem 2rem;
+  transition:background 0.35s;
+}
+.service-card:hover { background:var(--night-surface); }
+.service-glyph { font-size:2rem; margin-bottom:1rem; display:block; opacity:0.75; }
+.service-card h3 { font-size:1.35rem; margin-bottom:0.6rem; }
+.service-card p { font-size:0.88rem; line-height:1.85; }
+.service-tag {
+  display:inline-block;
+  margin-top:1rem;
+  font-size:10px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(212,168,83,0.3);
+  padding:0.25rem 0.7rem;
+}
+/* ABOUT */
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:5rem;
+  align-items:center;
+}
+.chart-wheel {
+  width:280px; height:280px;
+  border-radius:50%;
+  border:1px solid var(--night-border);
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto;
+}
+.chart-wheel::before {
+  content:'';
+  position:absolute; inset:22px;
+  border-radius:50%;
+  border:1px solid rgba(212,168,83,0.12);
+}
+.chart-wheel::after {
+  content:'';
+  position:absolute; inset:62px;
+  border-radius:50%;
+  border:1px solid rgba(212,168,83,0.08);
+}
+.wheel-glyphs {
+  position:absolute; inset:0;
+  border-radius:50%;
+  animation:spin 90s linear infinite;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+.glyph-dot { position:absolute; font-size:0.9rem; color:var(--gold); opacity:0.55; }
+.wheel-center { font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--gold); text-align:center; z-index:1; }
+.about-text p { margin-bottom:1.2rem; font-size:0.96rem; }
+.about-text strong { color:var(--gold-light); font-weight:400; }
+.credentials {
+  margin-top:2rem;
+  padding:1.5rem;
+  border-left:2px solid var(--gold);
+  background:var(--night-surface);
+}
+.credentials p { font-size:0.87rem; margin-bottom:0.5rem; }
+/* BOOKS */
+.books-intro { text-align:center; max-width:680px; margin:0 auto 1rem; }
+.series-desc {
+  text-align:center;
+  max-width:740px;
+  margin:0 auto 4rem;
+  font-size:0.93rem;
+  line-height:1.95;
+  color:var(--text-body);
+  font-style:italic;
+  border-top:1px solid var(--night-border);
+  border-bottom:1px solid var(--night-border);
+  padding:2rem 1rem;
+}
+.books-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2rem;
+}
+.book-card {
+  background:var(--night-card);
+  border:1px solid var(--night-border);
+  padding:2.5rem 2rem;
+  position:relative;
+  transition:border-color 0.35s, transform 0.35s;
+}
+.book-card:hover { border-color:var(--gold); transform:translateY(-4px); }
+.book-number {
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;
+  font-weight:300;
+  color:var(--gold);
+  opacity:0.18;
+  position:absolute;
+  top:1rem; right:1.5rem;
+  line-height:1;
+}
+.book-label {
+  font-size:10px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:0.5rem;
+  display:block;
+}
+.book-card h3 { font-size:1.5rem; margin-bottom:0.3rem; }
+.book-tagline {
+  font-size:0.82rem;
+  letter-spacing:0.08em;
+  color:var(--text-muted);
+  text-transform:uppercase;
+  margin-bottom:1.2rem;
+  display:block;
+}
+.book-card p { font-size:0.88rem; line-height:1.9; margin-bottom:1.5rem; }
+.book-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.65rem 1.5rem;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  transition:all 0.35s;
+  position:relative;
+  overflow:hidden;
+}
+.book-btn::before {
+  content:'';
+  position:absolute; inset:0;
+  background:var(--gold);
+  transform:translateX(-100%);
+  transition:transform 0.35s;
+}
+.book-btn:hover::before { transform:translateX(0); }
+.book-btn:hover { color:var(--night); }
+.book-btn span { position:relative; z-index:1; }
+.book-soon {
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.65rem 1.5rem;
+  border:1px solid var(--text-dim);
+  color:var(--text-muted);
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+}
+.coming-soon-ribbon {
+  position:absolute;
+  top:1.2rem; left:0;
+  background:var(--accent);
+  color:#fff;
+  font-size:9px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  padding:0.25rem 0.9rem;
+}
+.series-cta {
+  text-align:center;
+  margin-top:3.5rem;
+  padding-top:3rem;
+  border-top:1px solid var(--night-border);
+}
+.series-cta p { margin-bottom:1.5rem; font-size:0.93rem; }
+/* BLOG */
+.blog-intro { max-width:580px; margin-bottom:3.5rem; }
+.articles-list { display:flex; flex-direction:column; }
+.article-item {
+  border-top:1px solid var(--night-border);
+  padding:2rem 0;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;
+  align-items:start;
+}
+.article-item:last-child { border-bottom:1px solid var(--night-border); }
+.article-item:hover .article-title { color:var(--gold); }
+.article-meta {
+  font-size:11px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:0.6rem;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.article-tag {
+  color:var(--gold);
+  font-size:10px;
+  border:1px solid rgba(212,168,83,0.3);
+  padding:0.15rem 0.5rem;
+  letter-spacing:0.1em;
+}
+.article-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;
+  font-weight:400;
+  color:var(--text-main);
+  margin-bottom:0.5rem;
+  transition:color 0.3s;
+  line-height:1.3;
+}
+.article-excerpt { font-size:0.88rem; line-height:1.85; color:var(--text-muted); }
+.article-arrow {
+  color:var(--gold);
+  font-size:1.2rem;
+  opacity:0.4;
+  margin-top:0.3rem;
+  transition:opacity 0.3s, transform 0.3s;
+}
+.article-item:hover .article-arrow { opacity:1; transform:translateX(4px); }
+.blog-add-note {
+  margin-top:3rem;
+  padding:1.5rem 2rem;
+  background:var(--night-surface);
+  border-left:2px solid var(--gold);
+  font-size:0.85rem;
+  color:var(--text-muted);
+}
+.blog-add-note strong { color:var(--gold-light); font-weight:400; }
+/* BOOKING */
+.booking-options {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:1px;
+  background:var(--night-border);
+  max-width:800px;
+  margin:0 auto 3rem;
+  border:1px solid var(--night-border);
+}
+.booking-type {
+  background:var(--night-surface);
+  padding:1.8rem 1.2rem;
+  text-align:center;
+  transition:background 0.3s;
+}
+.booking-type:hover { background:var(--night-mid); }
+.booking-type h4 { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:400; color:var(--gold-light); margin:0.4rem 0 0.2rem; }
+.booking-type .dur { font-size:10px; letter-spacing:0.1em; color:var(--text-dim); text-transform:uppercase; }
+.calendly-wrapper {
+  max-width:900px;
+  margin:0 auto;
+  border:1px solid var(--night-border);
+  background:var(--night-mid);
+  overflow:hidden;
+}
+/* TESTIMONIALS */
+.testimonials-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2rem;
+  margin-top:3rem;
+}
+.testimonial {
+  border:1px solid var(--night-border);
+  padding:2rem;
+  position:relative;
+  background:var(--night-card);
+}
+.testimonial::before {
+  content:'"';
+  position:absolute;
+  top:-0.8rem; left:1.5rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:6rem;
+  color:var(--gold);
+  opacity:0.15;
+  line-height:1;
+}
+.testimonial p {
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;
+  font-style:italic;
+  color:var(--text-body);
+  margin-bottom:1.2rem;
+  line-height:1.75;
+}
+.testimonial-author { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); }
+/* CONTACT */
+.contact-links {
+  display:flex;
+  justify-content:center;
+  gap:3rem;
+  flex-wrap:wrap;
+  margin-top:3rem;
+}
+.contact-link {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.4rem;
+  text-decoration:none;
+  color:var(--text-body);
+  transition:color 0.3s;
+}
+.contact-link:hover { color:var(--gold); }
+.contact-link .icon { font-size:1.6rem; margin-bottom:0.2rem; }
+.contact-link .lbl { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:inherit; }
+.contact-link .detail { font-size:0.82rem; color:var(--text-muted); }
+footer {
+  position:relative; z-index:1;
+  border-top:1px solid var(--night-border);
+  padding:2rem;
+  text-align:center;
+  font-size:11px;
+  color:var(--text-dim);
+  letter-spacing:0.08em;
+  background:var(--night);
+}
+/* FADE */
+.fade-in { opacity:0; transform:translateY(22px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+/* BG VARIANTS */
+.bg-mid { background:var(--night-mid); }
+.bg-surface { background:var(--night-surface); }
+.bg-night { background:var(--night); }
+/* RESPONSIVE */
+@media(max-width:768px){
+  .about-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .chart-wheel { display:none; }
+  .nav-links { display:none; }
+  #lang-toggle { top:1rem; right:1rem; }
+  .article-item { grid-template-columns:1fr; }
+  .article-arrow { display:none; }
+}
 </style>
 </head>
-
 <body class="lang-ro">
 
-<!-- Language Toggle -->
 <div id="lang-toggle">
   <button class="lang-btn active" onclick="setLang('ro')">RO</button>
   <button class="lang-btn" onclick="setLang('en')">EN</button>
 </div>
 
-<!-- Navigation -->
 <nav>
-  <a href="#hero" class="nav-logo">✦ Serendipity</a>
+  <span class="nav-logo" onclick="showPage('home')">✦ Serendipity</span>
   <ul class="nav-links">
-    <li><a href="#services" data-ro>Servicii</a><a href="#services" data-en>Services</a></li>
-    <li><a href="#about" data-ro>Despre Mine</a><a href="#about" data-en>About</a></li>
-    <li><a href="#booking" data-ro>Programare</a><a href="#booking" data-en>Book</a></li>
-    <li><a href="#contact" data-ro>Contact</a><a href="#contact" data-en>Contact</a></li>
+    <li><a onclick="showPage('home')" data-ro>Acasă</a><a onclick="showPage('home')" data-en>Home</a></li>
+    <li><a onclick="scrollSec('services')" data-ro>Servicii</a><a onclick="scrollSec('services')" data-en>Services</a></li>
+    <li><a onclick="showPage('books')" data-ro>Cărți</a><a onclick="showPage('books')" data-en>Books</a></li>
+    <li><a onclick="showPage('blog')" data-ro>Articole</a><a onclick="showPage('blog')" data-en>Articles</a></li>
+    <li><a onclick="scrollSec('booking')" data-ro>Programare</a><a onclick="scrollSec('booking')" data-en>Book</a></li>
+    <li><a onclick="scrollSec('contact')" data-ro>Contact</a><a onclick="scrollSec('contact')" data-en>Contact</a></li>
   </ul>
 </nav>
 
-<!-- ── HERO ── -->
-<section id="hero">
+<!-- ══════════════ HOME ══════════════ -->
+<div id="page-home" class="page active">
+
+<section id="hero-section">
   <div class="hero-orb"></div>
-
   <div class="hero-symbol">☽ ✦ ☾</div>
-
-  <p class="hero-eyebrow" data-ro>Astrologie · Dezvoltare Personală</p>
-  <p class="hero-eyebrow" data-en>Astrology · Personal Development</p>
-
-  <h1>Serendipity<br><em style="font-style:italic; color: var(--gold);">by Alina Ramona</em></h1>
-
-  <p class="hero-subtitle" data-ro>Cerul ca oglindă a sufletului tău</p>
-  <p class="hero-subtitle" data-en>The sky as mirror of your soul</p>
-
-  <p class="hero-desc" data-ro>
-    Douăzeci de ani de practică astrологică profundă, combinată cu consiliere licențiată în dezvoltare personală. O călătorie spre sine, ghidată de stele.
-  </p>
-  <p class="hero-desc" data-en>
-    Twenty years of deep astrological practice, combined with licensed personal development counseling. A journey toward the self, guided by the stars.
-  </p>
-
-  <a href="#booking" class="hero-cta">
+  <p class="hero-eyebrow" data-ro>Astrologie · Dezvoltare Personală · Autoare</p>
+  <p class="hero-eyebrow" data-en>Astrology · Personal Development · Author</p>
+  <h1>Serendipity<br><em style="font-style:italic;color:var(--gold)">by Alina Ramona</em></h1>
+  <p class="hero-sub" data-ro>Cerul ca oglindă a sufletului tău</p>
+  <p class="hero-sub" data-en>The sky as mirror of your soul</p>
+  <p class="hero-desc" data-ro>Douăzeci de ani de practică astrologică profundă, consiliere licențiată în dezvoltare personală și autoare a seriei transformatoare <em>Petals of Becoming</em>.</p>
+  <p class="hero-desc" data-en>Twenty years of deep astrological practice, licensed personal development counseling, and author of the transformative <em>Petals of Becoming</em> series.</p>
+  <span class="hero-cta" onclick="scrollSec('booking')">
     <span data-ro>Rezervă o Consultație</span>
     <span data-en>Book a Consultation</span>
-  </a>
-
+  </span>
   <div class="hero-badges">
     <span class="badge" data-ro>20 ani experiență</span>
     <span class="badge" data-en>20 years experience</span>
-
     <span class="badge" data-ro>Consilier licențiat</span>
     <span class="badge" data-en>Licensed counselor</span>
-
-    <span class="badge" data-ro>Consultații în română & engleză</span>
-    <span class="badge" data-en>Sessions in Romanian & English</span>
+    <span class="badge" data-ro>Autoare · 3 cărți</span>
+    <span class="badge" data-en>Author · 3 books</span>
+    <span class="badge">RO &amp; EN</span>
   </div>
 </section>
 
-<!-- ── SERVICES ── -->
-<section id="services">
+<section id="services" class="bg-mid">
   <div class="section-inner">
     <div class="services-intro fade-in">
       <span class="section-label" data-ro>Servicii</span>
       <span class="section-label" data-en>Services</span>
-      <h2 data-ro>Ce oferim împreună</h2>
+      <h2 data-ro>Ce explorăm împreună</h2>
       <h2 data-en>What we explore together</h2>
       <p data-ro>Fiecare suflet are propriul cod cosmic. Prin astrologie și consiliere, descifrăm împreună harta vieții tale.</p>
       <p data-en>Every soul carries a unique cosmic code. Through astrology and counseling, we decode your life's map together.</p>
     </div>
-
     <div class="services-grid">
-
       <div class="service-card fade-in">
         <span class="service-glyph">☉</span>
-        <h3 data-ro>Hartă Natală</h3>
-        <h3 data-en>Natal Chart</h3>
+        <h3 data-ro>Hartă Natală</h3><h3 data-en>Natal Chart</h3>
         <p data-ro>Fotografia cerului din momentul nașterii tale — o hartă completă a personalității, talentelor, provocărilor și potențialului tău de viață.</p>
         <p data-en>The sky's snapshot at your birth — a complete map of your personality, talents, challenges, and life potential.</p>
-        <span class="service-tag" data-ro>Fundament</span>
-        <span class="service-tag" data-en>Foundation</span>
+        <span class="service-tag">90 min</span>
       </div>
-
       <div class="service-card fade-in">
         <span class="service-glyph">♡</span>
-        <h3 data-ro>Sinastrie</h3>
-        <h3 data-en>Synastry</h3>
-        <p data-ro>Compatibilitatea și dinamica dintre două hărți astrale — relații romantice, prietenii, relații de afaceri. Înțelegi ce funcționează și unde e nevoie de înțelegere.</p>
+        <h3 data-ro>Sinastrie</h3><h3 data-en>Synastry</h3>
+        <p data-ro>Compatibilitatea și dinamica dintre două hărți astrale — relații romantice, prietenii, parteneri de afaceri. Înțelegi ce funcționează și unde e nevoie de conștiință.</p>
         <p data-en>Compatibility and dynamics between two birth charts — romantic partnerships, friendships, business relationships. Understand what works and where awareness is needed.</p>
-        <span class="service-tag" data-ro>Relații</span>
-        <span class="service-tag" data-en>Relationships</span>
+        <span class="service-tag">75 min</span>
       </div>
-
       <div class="service-card fade-in">
         <span class="service-glyph">♃</span>
-        <h3 data-ro>Revenire Solară</h3>
-        <h3 data-en>Solar Return</h3>
-        <p data-ro>Harta anului tău personal — o previziune astrологică pentru cele 12 luni care urmează după ziua ta de naștere. Teme, oportunități, provocări.</p>
+        <h3 data-ro>Revenire Solară</h3><h3 data-en>Solar Return</h3>
+        <p data-ro>Harta anului tău personal — previziune astrologică pentru cele 12 luni care urmează după ziua ta de naștere. Teme, oportunități, provocări.</p>
         <p data-en>Your personal year chart — an astrological forecast for the 12 months following your birthday. Themes, opportunities, challenges ahead.</p>
-        <span class="service-tag" data-ro>Previziune</span>
-        <span class="service-tag" data-en>Forecast</span>
+        <span class="service-tag">60 min</span>
       </div>
-
       <div class="service-card fade-in">
         <span class="service-glyph">✈</span>
-        <h3 data-ro>Astro-Relocare</h3>
-        <h3 data-en>Astro Relocation</h3>
-        <p data-ro>Unde pe glob ți se activează cel mai bine energiile? Dacă visezi să te muți, să călătorești sau să lucrezi în altă parte, astrologia relocării îți arată locurile favorabile.</p>
-        <p data-en>Where on earth do your energies flourish best? If you dream of moving, traveling, or working abroad, relocation astrology reveals your power places.</p>
-        <span class="service-tag" data-ro>Locuri de Putere</span>
-        <span class="service-tag" data-en>Power Places</span>
+        <h3 data-ro>Astro-Relocare</h3><h3 data-en>Astro Relocation</h3>
+        <p data-ro>Unde pe glob ți se activează cel mai bine energiile? Dacă visezi să te muți sau să lucrezi în altă parte, astrologia relocării îți arată locurile favorabile.</p>
+        <p data-en>Where on earth do your energies flourish best? Relocation astrology reveals your power places around the globe.</p>
+        <span class="service-tag">60 min</span>
       </div>
-
       <div class="service-card fade-in">
         <span class="service-glyph">◎</span>
-        <h3 data-ro>Consiliere în Dezvoltare Personală</h3>
-        <h3 data-en>Personal Development Counseling</h3>
-        <p data-ro>Sesiuni individuale cu un consilier licențiat în dezvoltare personală. Explorăm blocaje, resurse interioare și direcție de viață — cu sau fără perspectivă astrologică.</p>
-        <p data-en>Individual sessions with a licensed personal development counselor. We explore blockages, inner resources, and life direction — with or without astrological perspective.</p>
-        <span class="service-tag" data-ro>Licențiat · Licensed</span>
-        <span class="service-tag" data-en>Licensed Counselor</span>
+        <h3 data-ro>Consiliere Dezvoltare Personală</h3><h3 data-en>Personal Development Counseling</h3>
+        <p data-ro>Sesiuni individuale cu un consilier licențiat. Explorăm blocaje, resurse interioare și direcție de viață — cu sau fără perspectivă astrologică.</p>
+        <p data-en>Individual sessions with a licensed counselor. We explore blockages, inner resources, and life direction — with or without astrological perspective.</p>
+        <span class="service-tag" data-ro>Licențiat · 60 min</span>
+        <span class="service-tag" data-en>Licensed · 60 min</span>
       </div>
-
       <div class="service-card fade-in">
         <span class="service-glyph">⟳</span>
-        <h3 data-ro>Tranzite & Progresii</h3>
-        <h3 data-en>Transits & Progressions</h3>
-        <p data-ro>Unde ești acum în ciclul tău cosmic? O lectură a energiilor active în prezent te ajută să navighezi cu grație momentele dificile și să valorifici oportunitățile.</p>
-        <p data-en>Where are you now in your cosmic cycle? A reading of currently active energies helps you navigate difficult moments with grace and seize opportunities.</p>
-        <span class="service-tag" data-ro>Prezent & Viitor</span>
-        <span class="service-tag" data-en>Present & Future</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── ABOUT ── -->
-<section id="about">
-  <div class="section-inner">
-    <div class="about-visual">
-      <div class="chart-wheel">
-        <div class="wheel-glyphs">
-          <span class="glyph-dot" style="top:5%; left:50%; transform:translateX(-50%)">♈</span>
-          <span class="glyph-dot" style="top:18%; right:10%">♉</span>
-          <span class="glyph-dot" style="top:46%; right:3%; transform:translateY(-50%)">♊</span>
-          <span class="glyph-dot" style="bottom:18%; right:10%">♋</span>
-          <span class="glyph-dot" style="bottom:5%; left:50%; transform:translateX(-50%)">♌</span>
-          <span class="glyph-dot" style="bottom:18%; left:10%">♍</span>
-          <span class="glyph-dot" style="top:46%; left:3%; transform:translateY(-50%)">♎</span>
-          <span class="glyph-dot" style="top:18%; left:10%">♏</span>
-        </div>
-        <div class="wheel-center">
-          <div style="font-size:2rem; margin-bottom:0.3rem">✦</div>
-          <div style="font-size:0.75rem; letter-spacing:0.1em; color: var(--text-muted)">NATAL</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="about-text fade-in">
-      <span class="section-label" data-ro>Despre Mine</span>
-      <span class="section-label" data-en>About Me</span>
-      <h2 data-ro>Alina Ramona</h2>
-      <h2 data-en>Alina Ramona</h2>
-      <p data-ro>
-        Pasiunea mea pentru astrologie a început cu <strong>peste 20 de ani în urmă</strong>, dintr-o curiozitate autentică față de ceea ce cerul spune despre fiecare dintre noi. Ceea ce a început ca un hobby aprofundat a devenit o practică serioasă, bazată pe studiu continuu și mii de hărți analizate.
-      </p>
-      <p data-en>
-        My love for astrology began <strong>over 20 years ago</strong>, from a genuine curiosity about what the sky says about each of us. What started as a deep hobby has become a serious practice built on continuous study and thousands of charts analyzed.
-      </p>
-      <p data-ro>
-        Lucrez cu <strong>astrologie psihologică și evolutivă</strong> — nu prezic viitorul, ci îl explorăm împreună ca pe un spațiu de posibilități. Fiecare consultație este unică, profundă și orientată spre creștere.
-      </p>
-      <p data-en>
-        I work with <strong>psychological and evolutionary astrology</strong> — I don't predict the future, we explore it together as a space of possibilities. Every consultation is unique, deep, and growth-oriented.
-      </p>
-
-      <div class="credentials">
-        <p data-ro><strong>☑ Consilier licențiat în Dezvoltare Personală</strong></p>
-        <p data-en><strong>☑ Licensed Counselor in Personal Development</strong></p>
-        <p data-ro style="margin-top:0.8rem !important; font-size:0.82rem !important; color: var(--text-dim);">Aceasta înseamnă că sesiunile de consiliere au baze profesionale și etice solidă, complementare practicii astrologice.</p>
-        <p data-en style="margin-top:0.8rem !important; font-size:0.82rem !important; color: var(--text-dim);">This means counseling sessions are grounded in professional and ethical frameworks, complementary to astrological practice.</p>
+        <h3 data-ro>Tranzite &amp; Progresii</h3><h3 data-en>Transits &amp; Progressions</h3>
+        <p data-ro>Unde ești acum în ciclul tău cosmic? O lectură a energiilor active în prezent te ajută să navighezi momentele dificile și să valorifici oportunitățile.</p>
+        <p data-en>Where are you now in your cosmic cycle? A reading of currently active energies helps you navigate difficult moments and seize opportunities.</p>
+        <span class="service-tag">60 min</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── BOOKING ── -->
-<section id="booking">
+<section class="bg-night">
   <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="chart-wheel">
+          <div class="wheel-glyphs">
+            <span class="glyph-dot" style="top:4%;left:50%;transform:translateX(-50%)">♈</span>
+            <span class="glyph-dot" style="top:17%;right:9%">♉</span>
+            <span class="glyph-dot" style="top:46%;right:2%;transform:translateY(-50%)">♊</span>
+            <span class="glyph-dot" style="bottom:17%;right:9%">♋</span>
+            <span class="glyph-dot" style="bottom:4%;left:50%;transform:translateX(-50%)">♌</span>
+            <span class="glyph-dot" style="bottom:17%;left:9%">♍</span>
+            <span class="glyph-dot" style="top:46%;left:2%;transform:translateY(-50%)">♎</span>
+            <span class="glyph-dot" style="top:17%;left:9%">♏</span>
+          </div>
+          <div class="wheel-center">
+            <div style="font-size:2.2rem;margin-bottom:0.3rem">✦</div>
+            <div style="font-size:0.7rem;letter-spacing:0.12em;color:var(--text-muted)">NATAL</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text fade-in">
+        <span class="section-label" data-ro>Despre Mine</span>
+        <span class="section-label" data-en>About Me</span>
+        <h2>Alina Ramona</h2>
+        <p data-ro>Pasiunea mea pentru astrologie a început cu <strong>peste 20 de ani în urmă</strong>, dintr-o curiozitate autentică față de ceea ce cerul spune despre fiecare dintre noi. Ceea ce a început ca un hobby aprofundat a devenit o practică serioasă, bazată pe studiu continuu și mii de hărți analizate.</p>
+        <p data-en>My love for astrology began <strong>over 20 years ago</strong>, from a genuine curiosity about what the sky says about each of us. What started as a deep hobby has become a serious practice built on continuous study and thousands of charts analyzed.</p>
+        <p data-ro>Lucrez cu <strong>astrologie psihologică și evolutivă</strong> — nu prezic viitorul, ci îl explorăm împreună ca pe un spațiu de posibilități. Fiecare consultație este unică, profundă și orientată spre creștere.</p>
+        <p data-en>I work with <strong>psychological and evolutionary astrology</strong> — I don't predict the future, we explore it together as a space of possibilities. Every consultation is unique, deep, and growth-oriented.</p>
+        <p data-ro>Sunt și autoarea seriei <strong>Petals of Becoming</strong> — trei cărți de lucru interior ghidat care au ajutat cititori din întreaga lume să se cunoască mai profund pe ei înșiși.</p>
+        <p data-en>I am also the author of the <strong>Petals of Becoming</strong> series — three books of guided inner work that have helped readers around the world come to know themselves more deeply.</p>
+        <div class="credentials">
+          <p><strong>☑ Consilier licențiat în Dezvoltare Personală</strong></p>
+          <p style="margin-top:0.6rem;font-size:0.82rem;color:var(--text-muted)" data-ro>Sesiunile de consiliere sunt ancorate în cadre profesionale și etice solide, complementare practicii astrologice.</p>
+          <p style="margin-top:0.6rem;font-size:0.82rem;color:var(--text-muted)" data-en>Counseling sessions are grounded in solid professional and ethical frameworks, complementary to astrological practice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="bg-surface">
+  <div class="section-inner" style="text-align:center">
     <span class="section-label" data-ro>Programare</span>
     <span class="section-label" data-en>Book a Session</span>
     <h2 data-ro>Rezervă o consultație</h2>
     <h2 data-en>Reserve your consultation</h2>
-
-    <p class="booking-intro" data-ro>
-      Alege tipul de sesiune care ți se potrivește și programează-te direct. Consultațiile se desfășoară online, în română sau engleză.
-    </p>
-    <p class="booking-intro" data-en>
-      Choose the session type that fits you and book directly. Consultations take place online, in Romanian or English.
-    </p>
-
+    <p style="max-width:500px;margin:0 auto 3rem" data-ro>Consultațiile se desfășoară online, în română sau engleză. Alege tipul de sesiune și programează-te direct.</p>
+    <p style="max-width:500px;margin:0 auto 3rem" data-en>Consultations take place online, in Romanian or English. Choose your session type and book directly.</p>
     <div class="booking-options">
-      <div class="booking-type">
-        <span class="service-glyph" style="font-size:1.4rem">☉</span>
-        <h4 data-ro>Hartă Natală</h4>
-        <h4 data-en>Natal Chart</h4>
-        <p class="dur" data-ro>90 min</p>
-        <p class="dur" data-en>90 min</p>
-      </div>
-      <div class="booking-type">
-        <span class="service-glyph" style="font-size:1.4rem">♡</span>
-        <h4 data-ro>Sinastrie</h4>
-        <h4 data-en>Synastry</h4>
-        <p class="dur" data-ro>75 min</p>
-        <p class="dur" data-en>75 min</p>
-      </div>
-      <div class="booking-type">
-        <span class="service-glyph" style="font-size:1.4rem">◎</span>
-        <h4 data-ro>Consiliere</h4>
-        <h4 data-en>Counseling</h4>
-        <p class="dur" data-ro>60 min</p>
-        <p class="dur" data-en>60 min</p>
-      </div>
+      <div class="booking-type"><span class="service-glyph" style="font-size:1.3rem">☉</span><h4 data-ro>Hartă Natală</h4><h4 data-en>Natal Chart</h4><p class="dur">90 min</p></div>
+      <div class="booking-type"><span class="service-glyph" style="font-size:1.3rem">♡</span><h4 data-ro>Sinastrie</h4><h4 data-en>Synastry</h4><p class="dur">75 min</p></div>
+      <div class="booking-type"><span class="service-glyph" style="font-size:1.3rem">♃</span><h4 data-ro>Revenire Solară</h4><h4 data-en>Solar Return</h4><p class="dur">60 min</p></div>
+      <div class="booking-type"><span class="service-glyph" style="font-size:1.3rem">◎</span><h4 data-ro>Consiliere</h4><h4 data-en>Counseling</h4><p class="dur">60 min</p></div>
     </div>
-
-    <!-- Calendly inline embed -->
     <div class="calendly-wrapper">
-      <div id="calendly-embed-container">
-        <!-- CALENDLY PLACEHOLDER — replace the instructions below with your actual Calendly username -->
-        <div class="calendly-placeholder">
-          <div style="font-size:2.5rem; opacity:0.4">📅</div>
-          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1.5rem; color:var(--gold-light)" data-ro>Programare Online</h3>
-          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1.5rem; color:var(--gold-light)" data-en>Online Booking</h3>
-          <p data-ro>Pentru a activa programarea directă, creați un cont gratuit pe <strong style="color:var(--gold)">Calendly.com</strong> și înlocuiți "YOUR-CALENDLY-USERNAME" în codul acestei pagini cu username-ul dvs. Calendly.</p>
-          <p data-en>To activate direct booking, create a free account at <strong style="color:var(--gold)">Calendly.com</strong> and replace "YOUR-CALENDLY-USERNAME" in this page's code with your Calendly username.</p>
-          <a href="https://calendly.com" target="_blank" class="btn-primary" data-ro>Creează cont Calendly gratuit →</a>
-          <a href="https://calendly.com" target="_blank" class="btn-primary" data-en>Create free Calendly account →</a>
-          <p style="font-size:0.8rem; margin-top:1rem" data-ro>Alternativ, contactați-mă direct prin email sau WhatsApp pentru a stabili o programare.</p>
-          <p style="font-size:0.8rem; margin-top:1rem" data-en>Alternatively, contact me directly by email or WhatsApp to schedule a session.</p>
-        </div>
-      </div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/serendipitybyalinaramona?locale=ro" style="min-width:320px;height:650px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
-
-    <!-- ↑↑↑ SETUP INSTRUCTIONS ↑↑↑
-    Once you have your Calendly account, replace the entire calendly-embed-container div above with:
-
-    <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-USERNAME" style="min-width:320px;height:630px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-    Replace YOUR-USERNAME with your actual Calendly username.
-    -->
-
   </div>
 </section>
 
-<!-- ── TESTIMONIALS ── -->
-<section id="testimonials">
+<section class="bg-mid">
   <div class="section-inner">
-    <div class="fade-in" style="text-align:center; margin-bottom:1rem">
+    <div class="fade-in" style="text-align:center;margin-bottom:1rem">
       <span class="section-label" data-ro>Testimoniale</span>
       <span class="section-label" data-en>Testimonials</span>
       <h2 data-ro>Ce spun clienții</h2>
       <h2 data-en>What clients say</h2>
     </div>
-
     <div class="testimonials-grid">
       <div class="testimonial fade-in">
-        <p data-ro>„Consultația cu Alina a fost una dintre cele mai profunde experiențe de autocunoaștere pe care le-am avut. Nu mi-a «citit» viitorul — mi-a ajutat să înțeleg cine sunt cu adevărat."</p>
-        <p data-en>"My session with Alina was one of the most profound self-discovery experiences I've had. She didn't 'read my future' — she helped me understand who I truly am."</p>
+        <p data-ro>„Consultația cu Alina a fost una dintre cele mai profunde experiențe de autocunoaștere pe care le-am avut. Nu mi-a citit viitorul — mi-a ajutat să înțeleg cine sunt cu adevărat."</p>
+        <p data-en>"My session with Alina was one of the most profound self-discovery experiences I've had. She didn't read my future — she helped me understand who I truly am."</p>
         <span class="testimonial-author">— M.C., București</span>
       </div>
       <div class="testimonial fade-in">
         <p data-ro>„Analiza de sinastrie ne-a ajutat pe mine și pe partenerul meu să înțelegem dinamicile relației noastre. Alina are o capacitate rară de a traduce simbolurile în ceva concret și util."</p>
-        <p data-en>"The synastry reading helped my partner and I understand our relationship's dynamics. Alina has a rare ability to translate symbols into something concrete and useful."</p>
+        <p data-en>"The synastry reading helped my partner and me understand our relationship's dynamics. Alina has a rare ability to translate symbols into something concrete and useful."</p>
         <span class="testimonial-author">— A.T., Cluj-Napoca</span>
       </div>
       <div class="testimonial fade-in">
-        <p data-ro>„Am apelat la sesiunile de consiliere combinată cu astrologie în unui moment de răscruce. Perspectiva oferită a fost cu totul diferită de orice altceva am încercat."</p>
-        <p data-en>"I turned to the combined counseling and astrology sessions at a crossroads in my life. The perspective offered was entirely different from anything else I had tried."</p>
+        <p data-ro>„Am apelat la sesiunile de consiliere în un moment de răscruce. Perspectiva oferită a fost cu totul diferită de orice altceva am încercat."</p>
+        <p data-en>"I turned to the counseling sessions at a crossroads in my life. The perspective offered was entirely different from anything else I had tried."</p>
         <span class="testimonial-author">— L.P., Timișoara</span>
       </div>
     </div>
-
-    <p style="text-align:center; margin-top:3rem; font-size:0.8rem; color:var(--text-dim)" data-ro>* Testimonialele au fost anonimizate și publicate cu acordul clienților.</p>
-    <p style="text-align:center; margin-top:3rem; font-size:0.8rem; color:var(--text-dim)" data-en>* Testimonials have been anonymized and published with client consent.</p>
+    <p style="text-align:center;margin-top:3rem;font-size:0.78rem;color:var(--text-dim)" data-ro>* Testimonialele au fost anonimizate și publicate cu acordul clienților.</p>
+    <p style="text-align:center;margin-top:3rem;font-size:0.78rem;color:var(--text-dim)" data-en>* Testimonials have been anonymized and published with client consent.</p>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
-<section id="contact">
-  <div class="section-inner">
+<section id="contact" class="bg-night">
+  <div class="section-inner" style="text-align:center">
     <span class="section-label" data-ro>Contact</span>
     <span class="section-label" data-en>Get in Touch</span>
     <h2 data-ro>Hai să vorbim</h2>
     <h2 data-en>Let's connect</h2>
-    <p style="color:var(--text-muted); max-width:400px; margin:0 auto" data-ro>Ai întrebări înainte de a rezerva? Scrie-mi — îți răspund în cel mai scurt timp.</p>
-    <p style="color:var(--text-muted); max-width:400px; margin:0 auto" data-en>Questions before booking? Write to me — I'll reply as soon as possible.</p>
-
+    <p style="max-width:400px;margin:0 auto" data-ro>Ai întrebări înainte de a rezerva? Scrie-mi — îți răspund cât mai curând.</p>
+    <p style="max-width:400px;margin:0 auto" data-en>Questions before booking? Write to me — I'll reply as soon as possible.</p>
     <div class="contact-links">
-      <a href="mailto:contact@serendipity-alina.ro" class="contact-link">
+      <a href="mailto:serendipitybyalinaramona@gmail.com" class="contact-link">
         <span class="icon">✉</span>
-        <span>Email</span>
-        <span style="color:var(--text-dim); font-size:0.8rem">contact@serendipity-alina.ro</span>
+        <span class="lbl">Email</span>
+        <span class="detail">serendipitybyalinaramona@gmail.com</span>
       </a>
-
-      <!-- Uncomment and fill in when you have WhatsApp/social:
-      <a href="https://wa.me/40XXXXXXXXX" class="contact-link" target="_blank">
-        <span class="icon">◉</span>
-        <span>WhatsApp</span>
+      <a href="https://www.amazon.com/dp/B0GY8SBHTD?binding=paperback" target="_blank" class="contact-link">
+        <span class="icon">📚</span>
+        <span class="lbl" data-ro>Cărțile mele</span>
+        <span class="lbl" data-en>My Books</span>
+        <span class="detail">Amazon</span>
       </a>
-      <a href="https://instagram.com/YOUR_HANDLE" class="contact-link" target="_blank">
-        <span class="icon">◈</span>
-        <span>Instagram</span>
-      </a>
-      <a href="https://facebook.com/YOUR_PAGE" class="contact-link" target="_blank">
-        <span class="icon">◑</span>
-        <span>Facebook</span>
-      </a>
-      -->
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+</div><!-- /page-home -->
+
+<!-- ══════════════ BOOKS ══════════════ -->
+<div id="page-books" class="page">
+<div style="padding-top:5rem"></div>
+<section class="bg-mid">
+  <div class="section-inner">
+    <div class="books-intro fade-in">
+      <span class="section-label" data-ro>Cărți</span>
+      <span class="section-label" data-en>Books</span>
+      <h2>Petals of Becoming</h2>
+      <p data-ro>O trilogie completă de lucru interior ghidat — trei cărți, trei structuri, o singură călătorie neîntreruptă de la prima sămânță a conștiinței de sine până la înflorirea deplină a unei vieți trăite în abundență autentică.</p>
+      <p data-en>A complete trilogy of guided inner work — three books, three structures, one unbroken journey from the first seed of self-awareness to the full, outward bloom of a life lived in genuine abundance.</p>
+    </div>
+
+    <div class="series-desc fade-in">
+      <p data-ro>Există un fel de devenire care nu se anunță. Nu sosește cu un moment dramatic de trezire sau o singură decizie care schimbă viața. Se întâmplă treptat — în jurnalul sincer scris înainte ca altcineva să se fi trezit, în mica alegere zilnică de a-ți privi viața mai clar decât ieri, în acumularea liniștită a unei noi relații cu tine însuți care începe să schimbe totul celelalte. Împreună, cele trei cărți formează un arc complet al devenirii umane.</p>
+      <p data-en>There is a kind of becoming that does not announce itself. It does not arrive with a dramatic moment of awakening or a single life-changing decision. It happens gradually — in the honest journal entry written before anyone else is awake, in the small daily choice to see your life more clearly than yesterday, in the quiet accumulation of a new relationship with yourself that begins to change everything else. Together, the three books form a complete arc of human becoming.</p>
+    </div>
+
+    <div class="books-grid">
+
+      <div class="book-card fade-in">
+        <div class="book-number">01</div>
+        <span class="book-label" data-ro>Cartea Întâi</span>
+        <span class="book-label" data-en>Book One</span>
+        <h3>Petals of Growth</h3>
+        <span class="book-tagline" data-ro>Un jurnal ghidat de 12 săptămâni</span>
+        <span class="book-tagline" data-en>A 12-week guided journal</span>
+        <p data-ro>Fiecare săptămână este ancorată de o floare și explorează una dintre cele douăsprezece calități deja prezente în tine: Trezire, Iubire de Sine, Curaj, Bucurie, Recunoștință, Reziliență, Creativitate, Conexiune, Răbdare, Speranță, Perseverență și Abundență. Prin predări săptămânale bogate, intenții de dimineață, vizualizări ghidate și reflecții de închidere — această carte construiește capacitatea fundamentală pentru o viață cu adevărat examinată.</p>
+        <p data-en>Each week is anchored by a flower and explores one of twelve qualities already present within you: Awakening, Self-Love, Courage, Joy, Gratitude, Resilience, Creativity, Connection, Patience, Hope, Perseverance, and Abundance. Through rich weekly teachings, morning intentions, guided visualizations, and closing reflections — this book builds the foundational capacity for a genuinely examined life.</p>
+        <a href="https://www.amazon.com/gp/product/B0GY5PJB9X" target="_blank" class="book-btn">
+          <span data-ro>Găsește pe Amazon →</span><span data-en>Find on Amazon →</span>
+        </a>
+      </div>
+
+      <div class="book-card fade-in">
+        <div class="book-number">02</div>
+        <span class="book-label" data-ro>Cartea a Doua</span>
+        <span class="book-label" data-en>Book Two</span>
+        <h3>Petals of Self-Love</h3>
+        <span class="book-tagline" data-ro>O călătorie de 21 de zile</span>
+        <span class="book-tagline" data-en>A 21-day journey</span>
+        <p data-ro>Știința, psihologia și filozofia celei mai fundamentale relații pe care o ființă umană o poate avea: cea cu ea însăși. Bazându-se pe psihologia profunzimii, neuroștiință, tradiție contemplativă și experiența vie, această carte se mișcă prin cinci arce — Trezire, Coborâre, Întâlnire, Întoarcere și Înflorire Deplină. Aceasta este cartea pentru oricine a fost vreodată mai amabil cu un străin decât cu sine însuși.</p>
+        <p data-en>The science, psychology, and philosophy of the most foundational relationship a human being can have: the one with themselves. Drawing on depth psychology, neuroscience, contemplative tradition, and lived experience, this book moves through five arcs — Awakening, Descent, Encounter, Return, and Full Bloom. This is the book for anyone who has ever been kinder to a stranger than to themselves.</p>
+        <a href="https://www.amazon.com/gp/product/B0GY98VZGT" target="_blank" class="book-btn">
+          <span data-ro>Găsește pe Amazon →</span><span data-en>Find on Amazon →</span>
+        </a>
+      </div>
+
+      <div class="book-card fade-in">
+        <div class="coming-soon-ribbon" data-ro>În curând</div>
+        <div class="coming-soon-ribbon" data-en>Coming Soon</div>
+        <div class="book-number">03</div>
+        <span class="book-label" data-ro>Cartea a Treia</span>
+        <span class="book-label" data-en>Book Three</span>
+        <h3>Petals of Abundance</h3>
+        <span class="book-tagline" data-ro>O călătorie de 14 zile · Disponibilă în curând</span>
+        <span class="book-tagline" data-en>A 14-day journey · Available soon</span>
+        <p data-ro>Fizica cuantică, cercetarea conștiinței, neuroștiința și înțelepciunea mai multor tradiții culturale — această carte construiește condițiile interioare pentru o abundență autentică, de la fundament, din interior spre exterior. Prin paisprezece zile de predare profundă, practică întrupată și jurnalizare sinceră — de la Conștiință și Speranță la Celebrare, Integrare și Înflorire Deplină.</p>
+        <p data-en>Quantum physics, consciousness research, neuroscience, and the wisdom of multiple cultural traditions — this book builds the interior conditions for genuine abundance, from the ground up, from the inside out. Through fourteen days of deep teaching, embodied practice, and honest journaling — from Awareness and Hope to Celebration, Integration, and Full Bloom.</p>
+        <span class="book-soon" data-ro>📅 Disponibilă în curând</span>
+        <span class="book-soon" data-en>📅 Available soon</span>
+      </div>
+
+    </div>
+
+    <div class="series-cta fade-in">
+      <span class="section-label" data-ro>Seria completă</span>
+      <span class="section-label" data-en>The complete series</span>
+      <p data-ro>Fiecare carte este o operă completă de sine stătătoare. Împreună, sunt o bibliotecă de transformare interioară autentică — genul care nu dispare când lectura se termină.</p>
+      <p data-en>Each book stands entirely alone as a complete work. Together, they are a library of genuine inner transformation — the kind that does not fade when the reading ends.</p>
+      <a href="https://www.amazon.com/dp/B0GY8SBHTD?binding=paperback&searchxofy=true" target="_blank" class="book-btn">
+        <span data-ro>Vezi seria completă pe Amazon →</span>
+        <span data-en>View the complete series on Amazon →</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+</div><!-- /page-books -->
+
+<!-- ══════════════ BLOG ══════════════ -->
+<div id="page-blog" class="page">
+<div style="padding-top:5rem"></div>
+<section class="bg-night">
+  <div class="section-inner">
+    <div class="blog-intro fade-in">
+      <span class="section-label" data-ro>Articole</span>
+      <span class="section-label" data-en>Articles</span>
+      <h2 data-ro>Gânduri despre cer și suflet</h2>
+      <h2 data-en>Thoughts on sky and soul</h2>
+      <p data-ro>Reflecții despre astrologie, dezvoltare personală și călătoria interioară — scrise din 20 de ani de practică și curiozitate neîntreruptă.</p>
+      <p data-en>Reflections on astrology, personal development, and the inner journey — written from 20 years of practice and unbroken curiosity.</p>
+    </div>
+
+    <div class="articles-list">
+
+      <div class="article-item fade-in">
+        <div>
+          <div class="article-meta">
+            <span>15 Apr 2025</span>
+            <span class="article-tag" data-ro>Astrologie</span>
+            <span class="article-tag" data-en>Astrology</span>
+          </div>
+          <div class="article-title" data-ro>Ce îți spune Mercur Retrograd cu adevărat</div>
+          <div class="article-title" data-en>What Mercury Retrograde is really telling you</div>
+          <p class="article-excerpt" data-ro>Mercur retrograd nu este o pedeapsă cosmică. Este o invitație — una pe care cultura populară a caricaturizat-o până la nerecunoaștere. Iată ce înseamnă cu adevărat și cum să lucrezi cu el, nu împotriva lui.</p>
+          <p class="article-excerpt" data-en>Mercury retrograde is not a cosmic punishment. It is an invitation — one that popular culture has caricatured beyond recognition. Here is what it truly means and how to work with it, not against it.</p>
+        </div>
+        <div class="article-arrow">→</div>
+      </div>
+
+      <div class="article-item fade-in">
+        <div>
+          <div class="article-meta">
+            <span>3 Mar 2025</span>
+            <span class="article-tag" data-ro>Dezvoltare Personală</span>
+            <span class="article-tag" data-en>Personal Development</span>
+          </div>
+          <div class="article-title" data-ro>Iubirea de sine nu este egoism — este fundament</div>
+          <div class="article-title" data-en>Self-love is not selfishness — it is foundation</div>
+          <p class="article-excerpt" data-ro>Una dintre cele mai persistente confuzii pe care le întâlnesc în sesiunile de consiliere: oamenii care cred că a se iubi pe ei înșiși înseamnă a-i neglija pe ceilalți. Nu este așa. Iată de ce.</p>
+          <p class="article-excerpt" data-en>One of the most persistent confusions I encounter in counseling sessions: people who believe that loving themselves means neglecting others. It does not. Here is why.</p>
+        </div>
+        <div class="article-arrow">→</div>
+      </div>
+
+      <div class="article-item fade-in">
+        <div>
+          <div class="article-meta">
+            <span>18 Ian 2025</span>
+            <span class="article-tag" data-ro>Astrologie</span>
+            <span class="article-tag" data-en>Astrology</span>
+          </div>
+          <div class="article-title" data-ro>Harta natală nu este destin — este potențial</div>
+          <div class="article-title" data-en>The natal chart is not destiny — it is potential</div>
+          <p class="article-excerpt" data-ro>Astrologia, practicată cu onestitate, nu îți spune ce vei face. Îți arată cu ce lucrezi — terenul interior, tendințele, darurile și umbrele pe care le-ai adus cu tine. Ce faci cu ele rămâne întotdeauna al tău.</p>
+          <p class="article-excerpt" data-en>Astrology, practiced honestly, does not tell you what you will do. It shows you what you are working with — the interior terrain, the tendencies, the gifts and shadows you brought with you. What you do with them always remains yours.</p>
+        </div>
+        <div class="article-arrow">→</div>
+      </div>
+
+    </div>
+
+    <!-- How to add articles -->
+    <div class="blog-add-note fade-in">
+      <p data-ro><strong>Cum adaugi un articol nou:</strong> Deschide <code>index.html</code> în orice editor de text, găsește secțiunea <code>articles-list</code> și copiază un bloc <code>article-item</code> existent. Înlocuiește data, eticheta, titlul și textul introductiv cu conținutul tău. Salvează fișierul și încarcă-l pe GitHub — articolul apare imediat pe site.</p>
+      <p data-en><strong>How to add a new article:</strong> Open <code>index.html</code> in any text editor, find the <code>articles-list</code> section, and copy an existing <code>article-item</code> block. Replace the date, tag, title, and excerpt with your content. Save the file and upload it to GitHub — the article appears on the site immediately.</p>
+    </div>
+
+  </div>
+</section>
+</div><!-- /page-blog -->
+
 <footer>
-  <p>✦ Serendipity by Alina Ramona · Astrologie & Consiliere în Dezvoltare Personală</p>
-  <p style="margin-top:0.5rem">© 2025 · Toate drepturile rezervate / All rights reserved</p>
+  <p>✦ Serendipity by Alina Ramona · Astrologie &amp; Consiliere în Dezvoltare Personală</p>
+  <p style="margin-top:0.4rem"><a href="mailto:serendipitybyalinaramona@gmail.com" style="color:var(--text-dim);text-decoration:none">serendipitybyalinaramona@gmail.com</a></p>
 </footer>
 
 <script>
-  // Language switcher
-  function setLang(lang) {
-    document.body.className = 'lang-' + lang;
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelector('.lang-btn[onclick*="' + lang + '"]').classList.add('active');
-    document.documentElement.setAttribute('lang', lang);
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(observeFadeIns, 100);
+}
+function scrollSec(id) {
+  if (!document.getElementById('page-home').classList.contains('active')) {
+    showPage('home');
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth'});
+    }, 200);
+  } else {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({behavior:'smooth'});
   }
-
-  // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(el => {
-      if (el.isIntersecting) {
-        el.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Calendly prefill (if you integrate Calendly later, this passes user locale)
-  // You can add: ?locale=ro to the Calendly URL for Romanian users
+}
+function setLang(lang) {
+  document.body.className = 'lang-' + lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.lang-btn[onclick*="' + lang + '"]').classList.add('active');
+  document.documentElement.setAttribute('lang', lang);
+}
+function observeFadeIns() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.08});
+  document.querySelectorAll('.fade-in:not(.visible)').forEach(el => obs.observe(el));
+}
+observeFadeIns();
 </script>
-
 </body>
 </html>
