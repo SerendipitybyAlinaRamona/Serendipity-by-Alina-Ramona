@@ -1,175 +1,162 @@
 # ✦ Serendipity by Alina Ramona
 ### Astrologie & Consiliere în Dezvoltare Personală
 
-> Website bilingv (română / engleză) pentru practica de astrologie și consiliere a Alinei Ramona.  
-> Bilingual (Romanian / English) website for Alina Ramona's astrology and personal development counseling practice.
+> Website bilingv (română / engleză) pentru practica de astrologie, consiliere și cărțile Alinei Ramona.
+> Bilingual (Romanian / English) website for Alina Ramona's astrology practice, counseling, and books.
+
+**Live site:** `https://YOUR-GITHUB-USERNAME.github.io/serendipity-alina-ramona/`
 
 ---
 
-## 🌐 Live Site
+## 🗂️ What's Inside
 
-Once deployed on GitHub Pages, your site will be available at:
+One single file — `index.html` — contains the entire website. No frameworks, no database, no dependencies to maintain.
+
+| Page | How to reach it | Contents |
+|---|---|---|
+| **Home** | Default / Logo click | Hero, Services, About, Booking (Calendly), Testimonials, Contact |
+| **Books** | "Cărți / Books" in nav | Petals of Becoming trilogy — all 3 books with Amazon links |
+| **Articles** | "Articole / Articles" in nav | Blog list — add new articles manually (see below) |
+
+---
+
+## 🚀 Deploying / Updating on GitHub Pages
+
+### First-time setup
+1. Go to [github.com](https://github.com) and sign in (or create a free account)
+2. Create a new repository named `serendipity-alina-ramona` — set it to **Public**
+3. Upload `index.html` and `README.md` via **Add file → Upload files**
+4. Go to **Settings → Pages → Source: Deploy from branch → main / root → Save**
+5. Wait 1–2 minutes → your site is live ✅
+
+### Updating the site (any future change)
+1. Open your repository on GitHub
+2. Click `index.html` → click the **pencil icon ✏️** to edit
+3. Select all (`Ctrl+A`), delete, paste the new version
+4. Click **Commit changes** → **Commit changes** again in the popup
+5. Site updates automatically within ~1 minute
+
+---
+
+## 📅 Calendly (Booking)
+
+Your Calendly is already embedded and live at:
 ```
-https://YOUR-GITHUB-USERNAME.github.io/serendipity-alina-ramona/
+https://calendly.com/serendipitybyalinaramona
+```
+
+Romanian visitors see the calendar in Romanian automatically (`?locale=ro` is already set).
+
+### To change the Calendly link in future
+Search for `calendly.com/serendipitybyalinaramona` in `index.html` and replace with your new URL.
+
+### To change session types shown above the calendar
+Find the `booking-options` section in `index.html` and edit the four `booking-type` blocks — change the glyph, title, or duration as needed.
+
+---
+
+## 📚 Books Page — Petals of Becoming
+
+The three books are already configured with your real Amazon links:
+
+| Book | Amazon Link | Status |
+|---|---|---|
+| Petals of Growth | `amazon.com/gp/product/B0GY5PJB9X` | Live ✅ |
+| Petals of Self-Love | `amazon.com/gp/product/B0GY98VZGT` | Live ✅ |
+| Petals of Abundance | — | Coming Soon ribbon shown |
+| Full series | `amazon.com/dp/B0GY8SBHTD` | Live ✅ |
+
+### When Petals of Abundance is published
+1. Open `index.html` and find the third book card (search for `Petals of Abundance`)
+2. Remove the two `coming-soon-ribbon` lines
+3. Replace the `<span class="book-soon">` lines with a button like the other two:
+```html
+<a href="https://www.amazon.com/gp/product/YOUR-ASIN" target="_blank" class="book-btn">
+  <span data-ro>Găsește pe Amazon →</span><span data-en>Find on Amazon →</span>
+</a>
 ```
 
 ---
 
-## 📋 What's Included
+## ✍️ Articles Page — Adding New Posts
 
-A single `index.html` file containing the complete website:
+The articles page is a simple manual list. No CMS needed.
 
-| Section | Content |
-|---|---|
-| **Hero** | Name, tagline, CTA button — bilingual |
-| **Services** | Natal chart, Synastry, Solar Return, Astro Relocation, Personal Development Counseling, Transits & Progressions |
-| **About** | 20-year background, licensed counselor credential |
-| **Booking** | Calendly embed area (see setup below) |
-| **Testimonials** | 3 placeholder testimonials |
-| **Contact** | Email link (and slots for WhatsApp, Instagram, Facebook) |
-| **Footer** | Copyright |
-
----
-
-## 🚀 Deploying to GitHub Pages (Free Hosting)
-
-### Step 1 — Create a GitHub Account
-Go to [github.com](https://github.com) and sign up. It's free.
-
-### Step 2 — Create a New Repository
-1. Click the **+** button → **New repository**
-2. Name it: `serendipity-alina-ramona`
-3. Set it to **Public**
-4. Click **Create repository**
-
-### Step 3 — Upload the File
-1. On the repository page, click **Add file** → **Upload files**
-2. Drag and drop `index.html` (and this `README.md` if you like)
-3. Click **Commit changes**
-
-### Step 4 — Enable GitHub Pages
-1. Go to **Settings** (top tab of your repository)
-2. Scroll to **Pages** in the left sidebar
-3. Under **Source**, select **Deploy from a branch**
-4. Choose branch: **main**, folder: **/ (root)**
-5. Click **Save**
-6. Wait 1–2 minutes, then your site is live ✅
-
----
-
-## 📅 Setting Up Calendly (Free Booking)
-
-Calendly's free plan is sufficient for this site.
-
-### Step 1 — Create Your Calendly Account
-Go to [calendly.com](https://calendly.com) and sign up for free.
-
-### Step 2 — Create Event Types
-Create one event type for each service, for example:
-- `Hartă Natală` — 90 minutes
-- `Sinastrie` — 75 minutes
-- `Consiliere în Dezvoltare Personală` — 60 minutes
-- `Revenire Solară` — 60 minutes
-- `Astro-Relocare` — 60 minutes
-
-### Step 3 — Get Your Calendly Username
-Your Calendly URL looks like: `https://calendly.com/alina-ramona`  
-Your username is the part after `calendly.com/` → in this case `alina-ramona`
-
-### Step 4 — Add Calendly to the Site
-Open `index.html` in a text editor. Find this block (around line 290):
+### To add a new article
+Open `index.html`, find the `articles-list` section, and **copy this block** — paste it above the first existing article (so newest appears first):
 
 ```html
-<div id="calendly-embed-container">
-  <!-- CALENDLY PLACEHOLDER ... -->
-  <div class="calendly-placeholder">
-    ...
+<div class="article-item fade-in">
+  <div>
+    <div class="article-meta">
+      <span>DD Lun YYYY</span>
+      <span class="article-tag" data-ro>Astrologie</span>
+      <span class="article-tag" data-en>Astrology</span>
+    </div>
+    <div class="article-title" data-ro>Titlul articolului în română</div>
+    <div class="article-title" data-en>Article title in English</div>
+    <p class="article-excerpt" data-ro>Primul paragraf sau introducere în română — 2-3 propoziții.</p>
+    <p class="article-excerpt" data-en>Opening paragraph or introduction in English — 2-3 sentences.</p>
   </div>
+  <div class="article-arrow">→</div>
 </div>
 ```
 
-**Replace the entire block** with these two lines:
+**Tag options** — change the tag text to match your topic:
+- `Astrologie` / `Astrology`
+- `Dezvoltare Personală` / `Personal Development`
+- `Sinastrie` / `Synastry`
+- `Revenire Solară` / `Solar Return`
+- `Reflecții` / `Reflections`
 
+---
+
+## ✏️ Common Edits
+
+### Change your email address
+Search for `serendipitybyalinaramona@gmail.com` — it appears twice. Replace both.
+
+### Add WhatsApp or social media links
+Find this block in the Contact section and uncomment / fill in:
 ```html
-<div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-USERNAME" style="min-width:320px;height:630px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Add WhatsApp:
+<a href="https://wa.me/40XXXXXXXXX" class="contact-link" target="_blank">
+  <span class="icon">◉</span>
+  <span class="lbl">WhatsApp</span>
+</a>
+-->
+```
+Remove the `<!--` and `-->` and fill in your phone number (format: country code + number, no spaces or dashes).
+
+### Add your photo to the About section
+Upload a photo named `alina.jpg` to the GitHub repository, then find the `chart-wheel` div in `index.html` and replace it with:
+```html
+<img src="alina.jpg" alt="Alina Ramona"
+  style="width:280px;height:280px;object-fit:cover;border-radius:50%;border:1px solid rgba(212,168,83,0.3);">
 ```
 
-Replace `YOUR-USERNAME` with your actual Calendly username.
-
-**To show Romanian interface for Romanian visitors**, use:
-```
-https://calendly.com/YOUR-USERNAME?locale=ro
-```
+### Add real client testimonials
+Find the three `testimonial` blocks in `index.html` and replace the placeholder text with real quotes. Keep the `data-ro` and `data-en` tags — one for the Romanian version, one for English.
 
 ---
 
 ## 🌍 Romanian SEO — Getting Found on Google
 
-The site already includes Romanian-language SEO meta tags. To improve discoverability further:
+The site already includes Romanian-language meta tags and keywords. To go further:
 
-### 1. Register on Google Search Console (Free)
+### 1. Google Search Console (free — do this first)
 - Go to [search.google.com/search-console](https://search.google.com/search-console)
 - Add your GitHub Pages URL as a property
-- Verify ownership (Google will give you a meta tag — paste it inside `<head>` in `index.html`)
-- Submit your sitemap (just your URL, since it's a single page)
+- Google gives you a `<meta name="google-site-verification">` tag — paste it inside `<head>` in `index.html`
+- Submit your URL for indexing
 
-### 2. Create a Google Business Profile (Free)
+### 2. Google Business Profile (free)
 - Go to [business.google.com](https://business.google.com)
-- Add your practice — this helps you appear in local Romanian searches
-- Category: **Astrolog** and/or **Consilier psihologic**
+- Add your practice — this makes you appear in local Romanian Google searches
+- Suggested categories: **Astrolog**, **Consilier în dezvoltare personală**
 
-### 3. Keywords Already in the Site
-The site is optimized for searches like:
-- `astrologie harta natala Romania`
-- `consultatie astrologie online`
-- `sinastrie compatibilitate`
-- `consilier dezvoltare personala`
-- `astro relocare`
-- `astrolog online romana`
-
----
-
-## ✏️ Customizing the Site
-
-All edits are made directly in `index.html` using any text editor (Notepad, VS Code, etc.).
-
-### Change the Email Address
-Search for `contact@serendipity-alina.ro` and replace with your actual email address (appears twice — in the `href` and as display text).
-
-### Add WhatsApp / Social Media
-Find this comment block near the Contact section:
-```html
-<!-- Uncomment and fill in when you have WhatsApp/social: -->
-```
-Remove the `<!--` and `-->` around the links you want, and fill in your phone number / social handles.
-
-### Add Your Real Photo
-Replace the zodiac wheel in the About section with your photo by adding after the `<div class="about-visual">` tag:
-```html
-<img src="alina-ramona.jpg" alt="Alina Ramona" style="width:280px; height:280px; object-fit:cover; border-radius:50%; border: 1px solid rgba(200,169,110,0.3);">
-```
-Upload `alina-ramona.jpg` to the same GitHub repository folder.
-
-### Replace Placeholder Testimonials
-Find the `<section id="testimonials">` section and edit the three testimonial blocks with real client quotes (with their permission).
-
-### Add a Custom Domain (Optional, Still Free)
-If you register a free domain via [eu.org](https://nic.eu.org) (takes ~2–4 weeks for approval):
-1. In your GitHub repository, create a file named `CNAME` (no extension)
-2. Inside it, write only your domain: `serendipity-alina.ro`
-3. Point your domain's DNS to GitHub Pages (GitHub's documentation explains this step)
-
----
-
-## 🗂️ File Structure
-
-```
-serendipity-alina-ramona/
-├── index.html        ← The entire website (one file)
-├── README.md         ← This file
-└── alina-ramona.jpg  ← (optional) Add your photo here
-```
+### Keywords already in the site
+`astrologie harta natala Romania` · `consultatie astrologie online` · `sinastrie compatibilitate` · `consilier dezvoltare personala` · `astro relocare` · `astrolog online romana` · `petals of becoming` · `petals of growth` · `petals of self love`
 
 ---
 
@@ -177,21 +164,27 @@ serendipity-alina-ramona/
 
 | Technology | Purpose | Cost |
 |---|---|---|
-| HTML / CSS / JavaScript | Website — single file, no framework | Free |
+| HTML / CSS / JavaScript | Entire website — single file | Free |
 | GitHub Pages | Hosting | Free forever |
 | Google Fonts (Cormorant Garamond + Jost) | Typography | Free |
-| Calendly (free plan) | Booking | Free |
+| Calendly (free plan) | Session booking | Free |
 | Google Search Console | SEO indexing | Free |
-| Google Business Profile | Local Romanian search | Free |
+| Google Business Profile | Local Romanian search visibility | Free |
 
 **Total monthly cost: €0**
 
 ---
 
-## 📞 Support
+## 📁 File Structure
 
-This site was built as a single self-contained HTML file — no database, no server, no dependencies to maintain. If you need to make changes and get stuck, the entire site is in one file and any text editor can open it.
+```
+serendipity-alina-ramona/
+├── index.html     ← The entire website (edit this for all changes)
+├── README.md      ← This file
+└── alina.jpg      ← Optional: add your photo here
+```
 
 ---
 
 *✦ Serendipity by Alina Ramona · Astrologie & Consiliere în Dezvoltare Personală*
+*serendipitybyalinaramona@gmail.com*
